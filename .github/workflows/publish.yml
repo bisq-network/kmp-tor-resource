@@ -1,0 +1,212 @@
+name: Publish
+
+# Bisq fork. Publishes the Maven artifacts of a release tag (or of the current branch on
+# manual dispatch) to the gh-pages branch, served by GitHub Pages as a Maven repository:
+#
+#   https://bisq-network.github.io/kmp-tor-resource/maven/
+#
+# Only what Bisq ships is built: Android, JVM (host binaries for the runtime's tests) and
+# iOS. macOS and Windows binaries inside the JVM artifacts are unsigned, see README.
+#
+# Secrets (repository or organisation level):
+#   MAVEN_GPG_PRIVATE_KEY   ASCII-armored private key used to sign every artifact
+#   MAVEN_GPG_PASSPHRASE    its passphrase
+# GitHub Pages must be enabled with the gh-pages branch as source.
+
+on:
+  push:
+    tags: [ '[0-9]+.[0-9]+.[0-9]+', '[0-9]+.[0-9]+.[0-9]+-rc[0-9]+' ]
+  workflow_dispatch:
+    inputs:
+      unsigned:
+        description: 'Publish without GPG signatures (testing only, never for a tag)'
+        type: boolean
+        default: false
+
+permissions:
+  actions: read
+  contents: write
+
+env:
+  GRADLE_OPTS: -Dorg.gradle.daemon=false -Dkotlin.incremental=false -Dorg.gradle.jvmargs="-XX:+HeapDumpOnOutOfMemoryError -XX:MetaspaceSize=1g"
+  KMP_TARGETS: ANDROID,ANDROID_ARM32,ANDROID_ARM64,ANDROID_X64,ANDROID_X86,JVM,IOS_ARM64,IOS_X64,IOS_SIMULATOR_ARM64
+
+jobs:
+  # Reuses the compilation artifacts CI produced for these exact expected hashes (same key
+  # scheme as CI.yml), or rebuilds in Docker when they have expired. Either way the packaged
+  # binaries must validate against build-logic before anything is published.
+  resources:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Hash ResourceValidation Extensions
+        run: |
+          HASHES=""
+          cd "build-logic/src/main/kotlin/resource/validation/extensions"
+          for FILE in $(ls); do
+            if [ ! -f "$FILE" ]; then continue; fi
+            if [ "$FILE" = "AbstractResourceValidationExtension.kt" ]; then continue; fi
+            HASHES+="$(sha256sum "$FILE" | cut -d ' ' -f 1)"
+          done
+          COMBINED="$(echo "$HASHES" | sha256sum - | cut -d ' ' -f 1)"
+          echo "rv-hash=$COMBINED" >> "$GITHUB_ENV"
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 11
+
+      - name: Fetch Or Build Native Compilations
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          SUBMODULES_READY=false
+          for TARGET in geoip android ios linux-libc linux-musl macos mingw; do
+            ARTIFACT_ID=$(
+              curl -sL \
+                -H "Accept: application/vnd.github+json" \
+                -H "Authorization: Bearer $TOKEN" \
+                -H "X-GitHub-Api-Version: 2022-11-28" \
+                "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/artifacts?page=1&per_page=1&name=${{ env.rv-hash }}-$TARGET" |
+                jq '.artifacts | .[0] | select(.expired==false) | .id'
+            )
+            if [ -n "$ARTIFACT_ID" ]; then
+              echo "Reusing CI artifact $ARTIFACT_ID for $TARGET"
+              ./.github/workflows/download_artifact.sh "$TOKEN" "$TARGET" "$ARTIFACT_ID"
+              continue
+            fi
+            echo "No CI artifact for $TARGET, building"
+            if ! $SUBMODULES_READY; then
+              git submodule update --init
+              SUBMODULES_READY=true
+            fi
+            if [ "$TARGET" != "geoip" ]; then
+              ./external/task.sh "build:all:$TARGET"
+            fi
+            ./external/task.sh "package:$TARGET" --skip-codesign
+          done
+
+      - name: Validate Native Compilations
+        run: |
+          VALIDATE_OUTPUT="$(./external/task.sh validate)"
+          echo "$VALIDATE_OUTPUT"
+          if echo "$VALIDATE_OUTPUT" | grep "ERROR"; then exit 1; fi
+
+      - name: Tar Package Directory
+        run: tar -czf resources.tar.gz external/build/package
+
+      - name: Upload Resources
+        uses: actions/upload-artifact@v4
+        with:
+          name: resources-${{ github.sha }}
+          path: resources.tar.gz
+          if-no-files-found: error
+          retention-days: 7
+
+  # macOS host: the iOS klibs and the noexec cinterop cannot be produced elsewhere.
+  publish:
+    needs: resources
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/actions/wrapper-validation@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 19
+
+      - name: Download Resources
+        uses: actions/download-artifact@v4
+        with:
+          name: resources-${{ github.sha }}
+
+      - name: Extract Resources
+        run: tar -xzf resources.tar.gz
+
+      - name: Validate Native Compilations
+        run: |
+          VALIDATE_OUTPUT="$(./external/task.sh validate)"
+          if echo "$VALIDATE_OUTPUT" | grep "ERROR"; then exit 1; fi
+
+      - name: Resolve Version
+        run: |
+          VERSION="$(grep '^VERSION_NAME=' gradle.properties | cut -d '=' -f 2)"
+          if [ "${{ github.ref_type }}" = "tag" ]; then
+            if [ "$VERSION" != "${{ github.ref_name }}" ]; then
+              echo "VERSION_NAME '$VERSION' does not match tag '${{ github.ref_name }}'"
+              exit 1
+            fi
+            if [ "${{ inputs.unsigned }}" = "true" ]; then
+              echo "Unsigned publishing is not allowed for a tag"
+              exit 1
+            fi
+          fi
+          echo "version=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Publish To Maven Layout
+        env:
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+        run: |
+          SIGNING="true"
+          if [ "${{ inputs.unsigned }}" = "true" ]; then
+            SIGNING="false"
+          elif [ -z "$ORG_GRADLE_PROJECT_signingInMemoryKey" ]; then
+            echo "MAVEN_GPG_PRIVATE_KEY secret is not set"
+            exit 1
+          fi
+          ./gradlew publishAllPublicationsToGitHubPagesRepository --stacktrace \
+            -PKMP_TARGETS="$KMP_TARGETS" \
+            -PRELEASE_SIGNING_ENABLED="$SIGNING"
+
+      - name: Checksums
+        run: |
+          cd build/maven-repo
+          find . -type f ! -name '*.asc' ! -name '*.md5' ! -name '*.sha1' ! -name '*.sha256' ! -name '*.sha512' \
+            | sort | xargs shasum -a 256 > "$GITHUB_WORKSPACE/SHA256SUMS"
+          wc -l "$GITHUB_WORKSPACE/SHA256SUMS"
+
+      - name: Push To gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch origin gh-pages 2>/dev/null; then
+            git worktree add ../gh-pages origin/gh-pages
+          else
+            git worktree add --detach ../gh-pages
+            (cd ../gh-pages && git checkout --orphan gh-pages && git rm -rfq . && touch .nojekyll)
+          fi
+          mkdir -p ../gh-pages/maven
+          rsync -a build/maven-repo/ ../gh-pages/maven/
+          cp SHA256SUMS "../gh-pages/maven/SHA256SUMS-${{ env.version }}"
+          touch ../gh-pages/.nojekyll
+          cd ../gh-pages
+          git add -A
+          git commit -m "Publish ${{ env.version }} (${{ github.sha }})" || echo "nothing to publish"
+          git push origin HEAD:gh-pages
+
+      - name: Create GitHub Release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TOR="$(grep -o 'tor-[0-9.]*' README.md | head -1)"
+          {
+            echo "kmp-tor-resource ${{ github.ref_name }}, ${TOR}, built from ${{ github.sha }}."
+            echo
+            echo "Maven repository: https://bisq-network.github.io/kmp-tor-resource/maven/"
+            echo "Group: network.bisq.kmp-tor"
+            echo
+            echo "SHA256SUMS lists every published file. Rebuild the tag with external/task.sh and compare against build-logic to verify."
+          } > RELEASE_NOTES.md
+          gh release create "${{ github.ref_name }}" SHA256SUMS \
+            --title "${{ github.ref_name }}" \
+            --notes-file RELEASE_NOTES.md
