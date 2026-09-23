@@ -126,9 +126,14 @@ jobs:
           - os: windows-latest
             java-version: 19
             targets: JVM,MINGW_X64
+          # The iOS Simulator libtor.dylib is unsigned in this fork (see --skip-codesign), and
+          # macOS kills an unsigned dylib loaded by the Kotlin/Native test binary. Apps are
+          # unaffected because Xcode signs embedded frameworks at build time; the simulator
+          # test tasks are excluded here and the device target is still compiled.
           - os: macos-latest
             java-version: 19
             targets: IOS_ARM64,IOS_X64,IOS_SIMULATOR_ARM64
+            test-args: -x iosSimulatorArm64Test -x iosX64Test
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout Repository
@@ -170,6 +175,7 @@ jobs:
         run: >
           ./gradlew check --stacktrace
           -PKMP_TARGETS="${{ matrix.targets }}"
+          ${{ matrix.test-args }}
 
       - name: Upload Test Reports
         uses: actions/upload-artifact@v4
@@ -184,7 +190,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        api-level: [ 21, 23, 24, 25, 29, 30, 31, 32, 33, 34, 35 ]
+        # Bisq fork: from the lowest API level a Bisq app supports (Connect minSdk 24).
+        api-level: [ 24, 25, 29, 30, 31, 32, 33, 34, 35 ]
     runs-on: ubuntu-latest
     steps:
       - name: Remove unnecessary tools
