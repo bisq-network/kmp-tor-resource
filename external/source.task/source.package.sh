@@ -15,6 +15,10 @@
 
 # Sourced by external/task.sh for all 'package:*' tasks
 
+# Only for --adhoc-codesign (see source.options.sh); source.sign.sh defines its own copy for the
+# sign:* tasks, which are never sourced together with this file.
+readonly RCODESIGN="$(which rcodesign)"
+
 # Dependency
 . "$DIR_TASK/source.task/source.docker.sh"
 
@@ -159,6 +163,9 @@ function __package:file {
   __util:require:var_set "$dirname_final" "dirname_final"
   __util:require:var_set "$permissions" "permissions"
   __util:require:var_set "$DIR_STAGING" "DIR_STAGING"
+  if $ADHOC_CODESIGN; then
+    __util:require:cmd "$RCODESIGN" "rcodesign"
+  fi
 
   if $DRY_RUN; then
     echo "
@@ -180,7 +187,11 @@ function __package:file {
   cp -a "$DIR_TASK/$1/$3" "$DIR_STAGING"
 
   if [ -n "$detached_sig" ]; then
-    if $SKIP_CODESIGN; then
+    if $ADHOC_CODESIGN; then
+      # The identifier is pinned so the signature does not depend on the staging path.
+      echo "    --adhoc-codesign >> ad-hoc signing $1/$3"
+      "$RCODESIGN" sign --binary-identifier "${3%%.*}" "$DIR_STAGING/$3"
+    elif $SKIP_CODESIGN; then
       echo "    --skip-codesign >> packaging UNSIGNED $1/$3"
     else
       ../tooling diff-cli apply \

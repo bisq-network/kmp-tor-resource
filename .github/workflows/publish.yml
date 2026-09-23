@@ -6,7 +6,8 @@ name: Publish
 #   https://bisq-network.github.io/kmp-tor-resource/maven/
 #
 # Only what Bisq ships is built: Android, JVM (host binaries for the runtime's tests) and
-# iOS. macOS and Windows binaries inside the JVM artifacts are unsigned, see README.
+# iOS. Apple binaries carry a deterministic ad-hoc signature, Windows binaries are unsigned,
+# see README.
 #
 # Secrets (repository or organisation level):
 #   MAVEN_GPG_PRIVATE_KEY   ASCII-armored private key used to sign every artifact
@@ -50,6 +51,12 @@ jobs:
             if [ "$FILE" = "AbstractResourceValidationExtension.kt" ]; then continue; fi
             HASHES+="$(sha256sum "$FILE" | cut -d ' ' -f 1)"
           done
+          # The packaging scripts shape the artifacts too (e.g. how Apple binaries are signed),
+          # so a change to them must not be served from a stale artifact.
+          cd "$GITHUB_WORKSPACE"
+          for FILE in external/task.sh external/source.task/*.sh; do
+            HASHES+="$(sha256sum "$FILE" | cut -d ' ' -f 1)"
+          done
           COMBINED="$(echo "$HASHES" | sha256sum - | cut -d ' ' -f 1)"
           echo "rv-hash=$COMBINED" >> "$GITHUB_ENV"
 
@@ -83,10 +90,18 @@ jobs:
               git submodule update --init
               SUBMODULES_READY=true
             fi
+            if [ "$TARGET" != "geoip" ] && ! command -v rcodesign >/dev/null; then
+              VERSION="0.29.0"
+              SHA256="dbe85cedd8ee4217b64e9a0e4c2aef92ab8bcaaa41f20bde99781ff02e600002"
+              curl -sSL -o rcodesign.tar.gz "https://github.com/indygreg/apple-platform-rs/releases/download/apple-codesign%2F$VERSION/apple-codesign-$VERSION-x86_64-unknown-linux-musl.tar.gz"
+              echo "$SHA256  rcodesign.tar.gz" | sha256sum -c -
+              tar -xzf rcodesign.tar.gz
+              sudo install -m 0755 "apple-codesign-$VERSION-x86_64-unknown-linux-musl/rcodesign" /usr/local/bin/rcodesign
+            fi
             if [ "$TARGET" != "geoip" ]; then
               ./external/task.sh "build:all:$TARGET"
             fi
-            ./external/task.sh "package:$TARGET" --skip-codesign
+            ./external/task.sh "package:$TARGET" --adhoc-codesign
           done
 
       - name: Validate Native Compilations
