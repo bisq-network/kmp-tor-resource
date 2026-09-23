@@ -17,6 +17,18 @@ plugins {
     id("com.vanniktech.maven.publish")
 }
 
+// Bisq fork: publications go to a Maven layout under the root build directory, which the
+// publish workflow commits to the gh-pages branch. Task name per module:
+// publishAllPublicationsToGitHubPagesRepository
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPages"
+            url = uri(rootProject.layout.buildDirectory.dir("maven-repo"))
+        }
+    }
+}
+
 tasks.withType<AbstractArchiveTask>().configureEach {
     isPreserveFileTimestamps = false
     isReproducibleFileOrder = true
