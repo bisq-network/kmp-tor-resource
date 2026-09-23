@@ -163,9 +163,6 @@ function __package:file {
   __util:require:var_set "$dirname_final" "dirname_final"
   __util:require:var_set "$permissions" "permissions"
   __util:require:var_set "$DIR_STAGING" "DIR_STAGING"
-  if $ADHOC_CODESIGN; then
-    __util:require:cmd "$RCODESIGN" "rcodesign"
-  fi
 
   if $DRY_RUN; then
     echo "
@@ -187,12 +184,14 @@ function __package:file {
   cp -a "$DIR_TASK/$1/$3" "$DIR_STAGING"
 
   if [ -n "$detached_sig" ]; then
-    if $ADHOC_CODESIGN; then
-      # The identifier is pinned so the signature does not depend on the staging path.
+    if $ADHOC_CODESIGN && [ "${detached_sig%%/*}" != "mingw" ]; then
+      # Apple (Mach-O) targets only; Windows binaries stay unsigned. The identifier is
+      # pinned so the signature does not depend on the staging path.
+      __util:require:cmd "$RCODESIGN" "rcodesign"
       echo "    --adhoc-codesign >> ad-hoc signing $1/$3"
       "$RCODESIGN" sign --binary-identifier "${3%%.*}" "$DIR_STAGING/$3"
-    elif $SKIP_CODESIGN; then
-      echo "    --skip-codesign >> packaging UNSIGNED $1/$3"
+    elif $ADHOC_CODESIGN || $SKIP_CODESIGN; then
+      echo "    --adhoc-codesign/--skip-codesign >> packaging UNSIGNED $1/$3"
     else
       ../tooling diff-cli apply \
         "$DIR_TASK/codesign/$dirname_out/$detached_sig/$3.signature" \

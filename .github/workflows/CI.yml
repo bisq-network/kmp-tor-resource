@@ -85,7 +85,7 @@ jobs:
       # Ad-hoc signing of the Apple compilations at packaging (see --adhoc-codesign). Pinned
       # release of apple-codesign, verified against its published checksum.
       - name: Install rcodesign
-        if: env.artifact-id == '' && matrix.task-target != 'geoip'
+        if: env.artifact-id == ''
         run: |
           VERSION="0.29.0"
           SHA256="dbe85cedd8ee4217b64e9a0e4c2aef92ab8bcaaa41f20bde99781ff02e600002"
