@@ -1,0 +1,114 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-android-unit-test-tor/409.12.0-SNAPSHOT/resource-android-unit-test-tor-409.12.0-SNAPSHOT.module",
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-android-unit-test-tor",
+    "version": "409.12.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-android-unit-test-tor-release.aar",
+          "url": "resource-android-unit-test-tor-android-409.12.0-SNAPSHOT.aar",
+          "size": 62141176,
+          "sha512": "0b015a3cdcc446eaa7476dc97327b78c543a3b1a1701aae37e2a338af9124274d9a5ac17c0c9e4e419f6f5f9e7eba44000992e6d8dbfd21b632644614c61d62b",
+          "sha256": "1a8805871bbe9bc7073b88f3b0798dd4ae986b3bc8b908c2161fe43f00dad57c",
+          "sha1": "d13da1add54e80a828909139ee4fd2c5cc467a74",
+          "md5": "c4d4d96317d3d678194b072585be2d48"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-android-unit-test-tor-release.aar",
+          "url": "resource-android-unit-test-tor-android-409.12.0-SNAPSHOT.aar",
+          "size": 62141176,
+          "sha512": "0b015a3cdcc446eaa7476dc97327b78c543a3b1a1701aae37e2a338af9124274d9a5ac17c0c9e4e419f6f5f9e7eba44000992e6d8dbfd21b632644614c61d62b",
+          "sha256": "1a8805871bbe9bc7073b88f3b0798dd4ae986b3bc8b908c2161fe43f00dad57c",
+          "sha1": "d13da1add54e80a828909139ee4fd2c5cc467a74",
+          "md5": "c4d4d96317d3d678194b072585be2d48"
+        }
+      ]
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "resource-android-unit-test-tor-android-409.12.0-SNAPSHOT-sources.jar",
+          "url": "resource-android-unit-test-tor-android-409.12.0-SNAPSHOT-sources.jar",
+          "size": 2635,
+          "sha512": "a1ee7f658f0314d0c2f5eac5fe77278e617f7ba233f888316a7843254b0e66eee171e68b4c426657a1c9dd3a5d8fb1d6c945811285af35ebb8a7fe4197533ee7",
+          "sha256": "49113d5c3ae39ba080c49a8b6a0cb8bf0dfb9f6cb10df6d95892b83a1b380750",
+          "sha1": "b0362b4dcbaa0b6dd486d1bc571586572e0a6569",
+          "md5": "a01342f64298435e56d85bfea1f43da5"
+        }
+      ]
+    }
+  ]
+}

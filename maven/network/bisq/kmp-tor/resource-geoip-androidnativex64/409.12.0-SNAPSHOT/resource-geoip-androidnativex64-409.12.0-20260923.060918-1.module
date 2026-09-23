@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-geoip/409.12.0-SNAPSHOT/resource-geoip-409.12.0-SNAPSHOT.module",
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-geoip",
+    "version": "409.12.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-geoip-androidNativeX64Main-409.12.0-SNAPSHOT.klib",
+          "url": "resource-geoip-androidnativex64-409.12.0-SNAPSHOT.klib",
+          "size": 9560421,
+          "sha512": "e842a2d2aa46895e22f6ebbc76410f8daaded39cf65e05de1f1c8848061fe2f4ec4b26f42c654f22f9f44ece67aa9b0f54db617a60717bd852523193930d653c",
+          "sha256": "b68cd7087dbead9c3f71461ddc669cd24240c3fa93a4b3d0c6ba47522f244835",
+          "sha1": "f45f7d363767644e78edca5ffa9d7ad94ef7e633",
+          "md5": "2d07495e9ef931cbd32c773e5b579fb8"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "resource-geoip-androidnativex64-409.12.0-SNAPSHOT-sources.jar",
+          "url": "resource-geoip-androidnativex64-409.12.0-SNAPSHOT-sources.jar",
+          "size": 4581362,
+          "sha512": "d41ca04f478f47bb5420516873969136141cf3cffe76919c28ad493f4d94d38ff63d587c485aab333ea82ae4138b7148934e800a466bdb6947add22c4d6be708",
+          "sha256": "00753c16b13b9faf23f52840b34d4c01b6c0ed86c864f20166d2cce860b5aeca",
+          "sha1": "f90338f53a68101d3a742069db976531f646b400",
+          "md5": "394a4eb8de20bab37cdab3577532185a"
+        }
+      ]
+    }
+  ]
+}

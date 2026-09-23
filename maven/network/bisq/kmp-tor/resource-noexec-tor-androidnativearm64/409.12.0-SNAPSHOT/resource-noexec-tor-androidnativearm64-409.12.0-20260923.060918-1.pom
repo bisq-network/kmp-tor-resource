@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- This module was also published with a richer model, Gradle metadata,  -->
+  <!-- which should be used instead. Do not delete the following line which  -->
+  <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+  <!-- that they should prefer consuming it instead. -->
+  <!-- do_not_remove: published-with-gradle-metadata -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>network.bisq.kmp-tor</groupId>
+  <artifactId>resource-noexec-tor-androidnativearm64</artifactId>
+  <version>409.12.0-SNAPSHOT</version>
+  <packaging>klib</packaging>
+  <name>Kotlin Multiplatform Tor Non-Executable Resources</name>
+  <description>Tor resources for running natively via dynamic loading</description>
+  <url>https://github.com/bisq-network/kmp-tor-resource/</url>
+  <inceptionYear>2021</inceptionYear>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>05nelsonm</id>
+      <name>Matthew Nelson</name>
+      <url>https://github.com/05nelsonm/</url>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://github.com/bisq-network/kmp-tor-resource.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/bisq-network/kmp-tor-resource.git</developerConnection>
+    <url>https://github.com/bisq-network/kmp-tor-resource/</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>io.matthewnelson.kmp-tor</groupId>
+      <artifactId>common-api-androidnativearm64</artifactId>
+      <version>2.4.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib</artifactId>
+      <version>2.2.21</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.matthewnelson.kmp-tor</groupId>
+      <artifactId>common-core-androidnativearm64</artifactId>
+      <version>2.4.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>network.bisq.kmp-tor</groupId>
+      <artifactId>resource-geoip-androidnativearm64</artifactId>
+      <version>409.12.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>

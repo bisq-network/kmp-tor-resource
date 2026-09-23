@@ -1,0 +1,109 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-geoip/409.12.0-SNAPSHOT/resource-geoip-409.12.0-SNAPSHOT.module",
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-geoip",
+    "version": "409.12.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-geoip-jvm-409.12.0-SNAPSHOT.jar",
+          "url": "resource-geoip-jvm-409.12.0-SNAPSHOT.jar",
+          "size": 4256492,
+          "sha512": "700e4cc1cf91c996f034b73ba2aa0632bdf77f13aef43d816b55a4ff2dadff6ee54ca7ef21797e367cd209fcc6941c4d814781bd86bb80e2814ca2780fc979a0",
+          "sha256": "45288af8f81e7bcd08fbbe058d58888f755d7d8b4a2a2ff715c89fd470f861e5",
+          "sha1": "9a3ed71db98e79cde1dc92b61a8836a7d6ddbf3a",
+          "md5": "54eefd9b0b25704def9d690576645f07"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-geoip-jvm-409.12.0-SNAPSHOT.jar",
+          "url": "resource-geoip-jvm-409.12.0-SNAPSHOT.jar",
+          "size": 4256492,
+          "sha512": "700e4cc1cf91c996f034b73ba2aa0632bdf77f13aef43d816b55a4ff2dadff6ee54ca7ef21797e367cd209fcc6941c4d814781bd86bb80e2814ca2780fc979a0",
+          "sha256": "45288af8f81e7bcd08fbbe058d58888f755d7d8b4a2a2ff715c89fd470f861e5",
+          "sha1": "9a3ed71db98e79cde1dc92b61a8836a7d6ddbf3a",
+          "md5": "54eefd9b0b25704def9d690576645f07"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "resource-geoip-jvm-409.12.0-SNAPSHOT-sources.jar",
+          "url": "resource-geoip-jvm-409.12.0-SNAPSHOT-sources.jar",
+          "size": 5135,
+          "sha512": "2f088c07eb83a832073df419e3974460ec984de7ed8287d0c4f781e56d24df531acdc6a9dc7c24d72df0c2c28e646611b2a0419b5c8507d991fe7909d3a0ab70",
+          "sha256": "8dafd456fdc0e40f7f728cb32cf729863ad48059f67d48a7e63176262edb4a8c",
+          "sha1": "641155cfa7e7e6abedb8c015b0d86ac7b4db51c2",
+          "md5": "af0240da5a59adb94159921b24ebb4d9"
+        }
+      ]
+    }
+  ]
+}

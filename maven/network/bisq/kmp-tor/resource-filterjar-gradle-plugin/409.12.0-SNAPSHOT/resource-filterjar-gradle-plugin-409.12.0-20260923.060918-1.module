@@ -1,0 +1,109 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-filterjar-gradle-plugin",
+    "version": "409.12.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson",
+          "module": "gradle-filterjar-plugin",
+          "version": {
+            "requires": "0.1.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-filterjar-gradle-plugin-409.12.0-SNAPSHOT.jar",
+          "url": "resource-filterjar-gradle-plugin-409.12.0-SNAPSHOT.jar",
+          "size": 12673,
+          "sha512": "cb2632e03cdbdd1e766e9d2b766823069cda3ba3f9cd8e74a3c4abb1701998b9b4aba551a308911dd56198ed21efc5685c199056223df478ae8819043aadd31b",
+          "sha256": "0a32cc20bf80df16cd92ec50bfa4582705c9b510c7f7772c1f7f28ff1da371a5",
+          "sha1": "80c3cbfb2660e82864b237f1bf7d41400a3d144f",
+          "md5": "cf5f1c472383a08d8480c8540245f598"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "io.matthewnelson",
+          "module": "gradle-filterjar-plugin",
+          "version": {
+            "requires": "0.1.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-filterjar-gradle-plugin-409.12.0-SNAPSHOT.jar",
+          "url": "resource-filterjar-gradle-plugin-409.12.0-SNAPSHOT.jar",
+          "size": 12673,
+          "sha512": "cb2632e03cdbdd1e766e9d2b766823069cda3ba3f9cd8e74a3c4abb1701998b9b4aba551a308911dd56198ed21efc5685c199056223df478ae8819043aadd31b",
+          "sha256": "0a32cc20bf80df16cd92ec50bfa4582705c9b510c7f7772c1f7f28ff1da371a5",
+          "sha1": "80c3cbfb2660e82864b237f1bf7d41400a3d144f",
+          "md5": "cf5f1c472383a08d8480c8540245f598"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "resource-filterjar-gradle-plugin-409.12.0-SNAPSHOT-sources.jar",
+          "url": "resource-filterjar-gradle-plugin-409.12.0-SNAPSHOT-sources.jar",
+          "size": 5496,
+          "sha512": "87c0684b03910b1d8347dfe45230ed0f8675c5c57abcb474bf1b6fbbe2e72edca30cdacb2220fd5650b4f0de5b6089bc2cec58a0b9a22dd829d0c2103a0cb644",
+          "sha256": "4548d3e98fde31081d6648ee90857b5a595b9ce13da42283796395f08530b738",
+          "sha1": "b0f7e5148cc41b5a7821b15f88694b978c89d7fe",
+          "md5": "48637fbfbce18d7feb054e6a9bca888c"
+        }
+      ]
+    }
+  ]
+}

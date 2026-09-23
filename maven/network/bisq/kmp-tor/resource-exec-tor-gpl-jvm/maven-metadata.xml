@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>network.bisq.kmp-tor</groupId>
+  <artifactId>resource-exec-tor-gpl-jvm</artifactId>
+  <versioning>
+    <latest>409.12.0-SNAPSHOT</latest>
+    <versions>
+      <version>409.12.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20260923061541</lastUpdated>
+  </versioning>
+</metadata>

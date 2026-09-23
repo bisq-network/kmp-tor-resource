@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-lib-tor-gpl/409.12.0-SNAPSHOT/resource-lib-tor-gpl-409.12.0-SNAPSHOT.module",
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-lib-tor-gpl",
+    "version": "409.12.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-lib-tor-gpl-iosX64Main-409.12.0-SNAPSHOT.klib",
+          "url": "resource-lib-tor-gpl-iosx64-409.12.0-SNAPSHOT.klib",
+          "size": 6888897,
+          "sha512": "3956377a8a9b2e3e3f626d6d2903c43740a1e0c582f81329a22cefcf90df5053872ccda3686d2e8611b69dbb1a096981a3fe5b8fd46de21939818307fb6705af",
+          "sha256": "522fd4993450710bbaed77025c411aa3e05480b1f69a56fca38824b7374e273d",
+          "sha1": "40aba7bf64c4490da0c69e3f2c871b867f98aa0a",
+          "md5": "90f01dbc0a4d3a5b58c4759d8cecafd2"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "resource-lib-tor-gpl-iosx64-409.12.0-SNAPSHOT-sources.jar",
+          "url": "resource-lib-tor-gpl-iosx64-409.12.0-SNAPSHOT-sources.jar",
+          "size": 3309799,
+          "sha512": "b61be006d456a76950985c7588e4b7adf8677b35504bd87cc7f96aa964ee3fa9e9b512fa13a688217d806777420a781f1213465b4ef7f1cb9782357a7f693d70",
+          "sha256": "7d7e152aa8c446c693e2cbca74ccc4f71790f6a9b520d1b000b2676b685f8daf",
+          "sha1": "9234f4ab888d3dc587a5539608daa609a5759cda",
+          "md5": "6c9c75128d7e53d423004f2d12403fc4"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-lib-tor-gpl-iosx64-409.12.0-SNAPSHOT-metadata.jar",
+          "url": "resource-lib-tor-gpl-iosx64-409.12.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}
