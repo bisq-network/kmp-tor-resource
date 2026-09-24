@@ -56,8 +56,8 @@ open class NoExecTorResourceValidationExtension private constructor(
     private val jvmLinuxMuslX86: String = "ce6631cb358524e136452e4e1cd5169f1fe656f8a8e27f821440ee931b47153d"
     private val jvmLinuxMuslX86_64: String = "3dd42b4e744fc0a45df4c89bd64ddf2ad62ae54b0f3830f50fe5979b30c05417"
 
-    protected open val jvmMacosAarch64: String = "d1033a955766fcedf48cb6f15dd0660e44ea031cd53e6b9faa68b95f8af4f987"
-    protected open val jvmMacosX86_64: String = "12233d19279a07406e180b4421b1dd748a704d0a0045eaa9556ea5fa7c7006bc"
+    protected open val jvmMacosAarch64: String = "4bfd0cd0dde83dea4dce93c2265c60e1a4de02d0d21988c3d0e196c1b5eda35a"
+    protected open val jvmMacosX86_64: String = "f0a97933ff87eba2b9b8fa5a09a8c8d93bda170121c38d98ab421ac2c87873bf"
 
     protected open val jvmMingwX86: String = "957ea95b4095d08458dc900462d0b963b5bb46f262206302c33a5bf332dd2d5d"
     protected open val jvmMingwX86_64: String = "5acc2c6af6844f2b8662e0749f40a6d56c9340ed9bf5d7d7a50b2291c118523f"
@@ -66,8 +66,8 @@ open class NoExecTorResourceValidationExtension private constructor(
         project: Project,
     ): NoExecTorResourceValidationExtension(project, isGpl = true) {
 
-        override val jvmMacosAarch64: String = "d1033a955766fcedf48cb6f15dd0660e44ea031cd53e6b9faa68b95f8af4f987"
-        override val jvmMacosX86_64: String = "12233d19279a07406e180b4421b1dd748a704d0a0045eaa9556ea5fa7c7006bc"
+        override val jvmMacosAarch64: String = "4bfd0cd0dde83dea4dce93c2265c60e1a4de02d0d21988c3d0e196c1b5eda35a"
+        override val jvmMacosX86_64: String = "f0a97933ff87eba2b9b8fa5a09a8c8d93bda170121c38d98ab421ac2c87873bf"
 
         override val jvmMingwX86: String = "957ea95b4095d08458dc900462d0b963b5bb46f262206302c33a5bf332dd2d5d"
         override val jvmMingwX86_64: String = "5acc2c6af6844f2b8662e0749f40a6d56c9340ed9bf5d7d7a50b2291c118523f"
