@@ -18,7 +18,7 @@ compilations of tor.
 - Add the plugin to your project where the `kmp-tor-resource` dependencies are defined.
   ```kotlin
   plugins {
-    id("io.matthewnelson.kmp.tor.resource-filterjar") version("409.5.0")
+    id("network.bisq.kmp-tor.resource-filterjar") version("409.12.0")
   }
   ```
 

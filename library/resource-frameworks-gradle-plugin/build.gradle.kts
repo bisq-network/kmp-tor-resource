@@ -57,7 +57,7 @@ java {
 gradlePlugin {
     plugins {
         create("resourceFrameworks") {
-            id = "io.matthewnelson.kmp.tor.resource-frameworks"
+            id = "network.bisq.kmp-tor.resource-frameworks"
             implementationClass = "io.matthewnelson.kmp.tor.resource.frameworks.KmpTorResourceFrameworksPlugin"
         }
     }

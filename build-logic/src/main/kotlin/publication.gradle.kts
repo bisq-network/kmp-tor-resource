@@ -29,6 +29,20 @@ publishing {
     }
 }
 
+// Bisq fork: the POM keeps the upstream author from gradle.properties and adds the fork as the
+// publisher of the network.bisq.kmp-tor coordinates.
+mavenPublishing {
+    pom {
+        developers {
+            developer {
+                id.set("bisq-network")
+                name.set("Bisq Network")
+                url.set("https://github.com/bisq-network/")
+            }
+        }
+    }
+}
+
 tasks.withType<AbstractArchiveTask>().configureEach {
     isPreserveFileTimestamps = false
     isReproducibleFileOrder = true
