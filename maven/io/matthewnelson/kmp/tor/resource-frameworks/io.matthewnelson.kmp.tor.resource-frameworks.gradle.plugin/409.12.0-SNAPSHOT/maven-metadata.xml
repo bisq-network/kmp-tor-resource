@@ -3,16 +3,16 @@
   <groupId>io.matthewnelson.kmp.tor.resource-frameworks</groupId>
   <artifactId>io.matthewnelson.kmp.tor.resource-frameworks.gradle.plugin</artifactId>
   <versioning>
-    <lastUpdated>20260923060918</lastUpdated>
+    <lastUpdated>20260924030131</lastUpdated>
     <snapshot>
-      <timestamp>20260923.060918</timestamp>
+      <timestamp>20260924.030131</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>409.12.0-20260923.060918-1</value>
-        <updated>20260923060918</updated>
+        <value>409.12.0-20260924.030131-1</value>
+        <updated>20260924030131</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>

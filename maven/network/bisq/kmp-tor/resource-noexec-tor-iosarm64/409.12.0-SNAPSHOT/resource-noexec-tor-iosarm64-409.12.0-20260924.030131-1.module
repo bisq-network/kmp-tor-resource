@@ -1,0 +1,155 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-noexec-tor/409.12.0-SNAPSHOT/resource-noexec-tor-409.12.0-SNAPSHOT.module",
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-noexec-tor",
+    "version": "409.12.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "network.bisq.kmp-tor",
+          "module": "resource-geoip",
+          "version": {
+            "requires": "409.12.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-noexec-tor-iosArm64Main-409.12.0-SNAPSHOT.klib",
+          "url": "resource-noexec-tor-iosarm64-409.12.0-SNAPSHOT.klib",
+          "size": 37972,
+          "sha512": "988cf23bbcbe81de8581f5328ecafe50b617ae21c32f13a80760a28cbdcad07cafb6d1a9cf3d511aafe65fbe4b9a5e43355c257256883af8f141a886b6ea2167",
+          "sha256": "ae87fe16afcee420bff70c7f036af06d0723be6c73494a9f71327828ef56c7e4",
+          "sha1": "be1d69412b8636483c265b27903b25f72af95408",
+          "md5": "63a326772cf917e11e2bec696a581848"
+        },
+        {
+          "name": "resource-noexec-tor-iosArm64Cinterop-kmp_torMain-409.12.0-SNAPSHOT.klib",
+          "url": "resource-noexec-tor-iosarm64-409.12.0-SNAPSHOT-cinterop-kmp_tor.klib",
+          "size": 10762,
+          "sha512": "aa8787fccbde02b6771c2be219a3634a494038637a3ea59f0dbb4c15eb92e44f4fea9c1b48d4650a6781ef6e9fc36bfd6bd63cd91e1f797b61d1ae9e665363c3",
+          "sha256": "615dce53f9e3420dea7ea0337707077d8dea4d9ddaa54f9039ffa24be561bd04",
+          "sha1": "b69b9319a5849b5c1458307a3ef4653151f3baaa",
+          "md5": "0b28e887165645b453fc92a0f4652b9d"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "resource-noexec-tor-iosarm64-409.12.0-SNAPSHOT-sources.jar",
+          "url": "resource-noexec-tor-iosarm64-409.12.0-SNAPSHOT-sources.jar",
+          "size": 17671,
+          "sha512": "260b4c26c81534dcacd2956ff6e481945730347eff6ab2ca9ec1e1eabc2b8c6cebc015f1b6fbe8fc35f19a2114331a162afc5e59012d1b036b38f15a469f4734",
+          "sha256": "7d9b2187a0f9cb242e7a648806c0f63aa644504be2a4b08b2e6155691074f2b6",
+          "sha1": "0cd48bf5b47ed9f729c6408930a2bee9eebfab2d",
+          "md5": "74be6d68e825b18f454c9ea750483ba4"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "network.bisq.kmp-tor",
+          "module": "resource-geoip",
+          "version": {
+            "requires": "409.12.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-noexec-tor-iosarm64-409.12.0-SNAPSHOT-metadata.jar",
+          "url": "resource-noexec-tor-iosarm64-409.12.0-SNAPSHOT-metadata.jar",
+          "size": 25389,
+          "sha512": "15004627c8c85a0992ad1bbf29e65d857f975abee48a1e194c49aa5ecbd5a0586b1e78ec5835888d40ed6f897027bb4fcafae4fc4de09914cd732ac1e5592668",
+          "sha256": "3308064284965fc52934712bd8e0e9825a84fa46500802b234f922027007075e",
+          "sha1": "b4870724e554a96d2e17f4d7d640c109fe03a0d9",
+          "md5": "4c57a56fd7ef0f7a7e24a81078d4ab6b"
+        }
+      ]
+    }
+  ]
+}

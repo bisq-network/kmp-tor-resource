@@ -1,0 +1,422 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-geoip",
+    "version": "409.12.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-geoip-metadata-409.12.0-SNAPSHOT.jar",
+          "url": "resource-geoip-409.12.0-SNAPSHOT.jar",
+          "size": 4589146,
+          "sha512": "0b87eb86d16cd82afbd2b71305ff2791fcf853dace6e613f2f5eb984faceb965588608e47926b09a1ba6df89444d00a15954412ce3bc052c2e9d5c7cec654a66",
+          "sha256": "f92aa695a890397f418cec89f25d699953741bbbf354e9d0f6630624b691038f",
+          "sha1": "d925c3266b9bb99667f7aec756d716d7125c4401",
+          "md5": "0218eda1304b4a87822ada37acb89c11"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "resource-geoip-kotlin-409.12.0-SNAPSHOT-sources.jar",
+          "url": "resource-geoip-409.12.0-SNAPSHOT-sources.jar",
+          "size": 4581362,
+          "sha512": "e81c181d64838a8f8f3a5592482cc3f31a38263b23bd1d24cc12297471a30bdc84112f50f7ff3fe2e8fde8eea3e62ab5ca78704dea42f22baa36d7a32718ab74",
+          "sha256": "4721921c2c4b702589e1ffb3fb1a6df1b52788f6d9c21cf8acdca9d635026a33",
+          "sha1": "cd4f47d1fa2e530285aa56908c698fd63f8bb5bf",
+          "md5": "dec764851df9e91b9f48467e6e93366d"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-androidnativearm32/409.12.0-SNAPSHOT/resource-geoip-androidnativearm32-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-androidnativearm32",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-androidnativearm32/409.12.0-SNAPSHOT/resource-geoip-androidnativearm32-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-androidnativearm32",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-androidnativearm64/409.12.0-SNAPSHOT/resource-geoip-androidnativearm64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-androidnativearm64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-androidnativearm64/409.12.0-SNAPSHOT/resource-geoip-androidnativearm64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-androidnativearm64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-androidnativex64/409.12.0-SNAPSHOT/resource-geoip-androidnativex64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-androidnativex64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-androidnativex64/409.12.0-SNAPSHOT/resource-geoip-androidnativex64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-androidnativex64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeX86ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-androidnativex86/409.12.0-SNAPSHOT/resource-geoip-androidnativex86-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-androidnativex86",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeX86SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-androidnativex86/409.12.0-SNAPSHOT/resource-geoip-androidnativex86-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-androidnativex86",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-iosarm64/409.12.0-SNAPSHOT/resource-geoip-iosarm64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-iosarm64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-iosarm64/409.12.0-SNAPSHOT/resource-geoip-iosarm64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-iosarm64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-iosarm64/409.12.0-SNAPSHOT/resource-geoip-iosarm64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-iosarm64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-iossimulatorarm64/409.12.0-SNAPSHOT/resource-geoip-iossimulatorarm64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-iossimulatorarm64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-iossimulatorarm64/409.12.0-SNAPSHOT/resource-geoip-iossimulatorarm64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-iossimulatorarm64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-iossimulatorarm64/409.12.0-SNAPSHOT/resource-geoip-iossimulatorarm64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-iossimulatorarm64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-iosx64/409.12.0-SNAPSHOT/resource-geoip-iosx64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-iosx64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-iosx64/409.12.0-SNAPSHOT/resource-geoip-iosx64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-iosx64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-iosx64/409.12.0-SNAPSHOT/resource-geoip-iosx64-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-iosx64",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-jvm/409.12.0-SNAPSHOT/resource-geoip-jvm-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-jvm",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-jvm/409.12.0-SNAPSHOT/resource-geoip-jvm-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-jvm",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../resource-geoip-jvm/409.12.0-SNAPSHOT/resource-geoip-jvm-409.12.0-SNAPSHOT.module",
+        "group": "network.bisq.kmp-tor",
+        "module": "resource-geoip-jvm",
+        "version": "409.12.0-SNAPSHOT"
+      }
+    }
+  ]
+}

@@ -3,44 +3,44 @@
   <groupId>network.bisq.kmp-tor</groupId>
   <artifactId>resource-geoip-iossimulatorarm64</artifactId>
   <versioning>
-    <lastUpdated>20260923060918</lastUpdated>
+    <lastUpdated>20260924030131</lastUpdated>
     <snapshot>
-      <timestamp>20260923.060918</timestamp>
+      <timestamp>20260924.030131</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <classifier>metadata</classifier>
         <extension>jar</extension>
-        <value>409.12.0-20260923.060918-1</value>
-        <updated>20260923060918</updated>
+        <value>409.12.0-20260924.030131-1</value>
+        <updated>20260924030131</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>klib</extension>
-        <value>409.12.0-20260923.060918-1</value>
-        <updated>20260923060918</updated>
-      </snapshotVersion>
-      <snapshotVersion>
-        <classifier>sources</classifier>
-        <extension>jar</extension>
-        <value>409.12.0-20260923.060918-1</value>
-        <updated>20260923060918</updated>
+        <value>409.12.0-20260924.030131-1</value>
+        <updated>20260924030131</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>409.12.0-20260923.060918-1</value>
-        <updated>20260923060918</updated>
+        <value>409.12.0-20260924.030131-1</value>
+        <updated>20260924030131</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>module</extension>
+        <value>409.12.0-20260924.030131-1</value>
+        <updated>20260924030131</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>409.12.0-20260923.060918-1</value>
-        <updated>20260923060918</updated>
+        <value>409.12.0-20260924.030131-1</value>
+        <updated>20260924030131</updated>
       </snapshotVersion>
       <snapshotVersion>
-        <extension>module</extension>
-        <value>409.12.0-20260923.060918-1</value>
-        <updated>20260923060918</updated>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>409.12.0-20260924.030131-1</value>
+        <updated>20260924030131</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
