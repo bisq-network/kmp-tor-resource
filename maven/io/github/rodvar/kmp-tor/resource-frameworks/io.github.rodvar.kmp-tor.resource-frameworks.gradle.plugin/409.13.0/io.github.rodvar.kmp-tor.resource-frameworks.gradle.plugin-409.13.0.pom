@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.rodvar.kmp-tor.resource-frameworks</groupId>
+  <artifactId>io.github.rodvar.kmp-tor.resource-frameworks.gradle.plugin</artifactId>
+  <version>409.13.0</version>
+  <packaging>pom</packaging>
+  <name>Kotlin Multiplatform Tor Resource Frameworks Gradle Plugin</name>
+  <description>Plugin that provides Apple Frameworks for a project to be included in the final Xcode build</description>
+  <url>https://github.com/bisq-network/kmp-tor-resource/</url>
+  <inceptionYear>2021</inceptionYear>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>05nelsonm</id>
+      <name>Matthew Nelson</name>
+      <url>https://github.com/05nelsonm/</url>
+    </developer>
+    <developer>
+      <id>bisq-network</id>
+      <name>Bisq Network</name>
+      <url>https://github.com/bisq-network/</url>
+    </developer>
+    <developer>
+      <id>rodvar</id>
+      <name>rodvar</name>
+      <url>https://github.com/rodvar/</url>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://github.com/bisq-network/kmp-tor-resource.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/bisq-network/kmp-tor-resource.git</developerConnection>
+    <url>https://github.com/bisq-network/kmp-tor-resource/</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>io.github.rodvar.kmp-tor</groupId>
+      <artifactId>resource-frameworks-gradle-plugin</artifactId>
+      <version>409.13.0</version>
+    </dependency>
+  </dependencies>
+</project>

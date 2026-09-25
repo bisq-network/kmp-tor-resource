@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-geoip/409.13.0/resource-geoip-409.13.0.module",
+    "group": "io.github.rodvar.kmp-tor",
+    "module": "resource-geoip",
+    "version": "409.13.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-geoip-iosSimulatorArm64Main-409.13.0.klib",
+          "url": "resource-geoip-iossimulatorarm64-409.13.0.klib",
+          "size": 9576283,
+          "sha512": "2e661046b2bc84e801d8f31a9feb6019180765ee1429ebb8dce2a4289a24417ade71b09aa5879cfb27b0d06ba24c6e2e55238e67123a5725cce3daf2412a4c87",
+          "sha256": "c34a74b7f3f62fa183936d0b3c7d57c75f499b3231bbe3a1ced806f3fc760d0d",
+          "sha1": "c54e03da3df4c5e94653083fe471ead5824a27dc",
+          "md5": "fb3d403f59c3b8cd10dc831cb7473137"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "resource-geoip-iossimulatorarm64-409.13.0-sources.jar",
+          "url": "resource-geoip-iossimulatorarm64-409.13.0-sources.jar",
+          "size": 4588753,
+          "sha512": "1a513a3871b59f3542fde57e12f32b273416964b9d6967acc4e3f5e0db8af1d897de1f7b0f171cb103755c2e0ed00932ed28fefe39d79e76b5b8a476a87dc59b",
+          "sha256": "c62b123bd943ffc2a84b583494584f916166b680ba857796826486bcdca8e96e",
+          "sha1": "17f487177fae67faae85c16119b67e5569ed74fb",
+          "md5": "c8eb36520f269f8f63662e2eab5c4610"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-geoip-iossimulatorarm64-409.13.0-metadata.jar",
+          "url": "resource-geoip-iossimulatorarm64-409.13.0-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

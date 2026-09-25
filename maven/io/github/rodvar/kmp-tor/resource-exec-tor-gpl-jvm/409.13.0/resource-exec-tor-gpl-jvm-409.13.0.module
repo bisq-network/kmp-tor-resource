@@ -1,0 +1,137 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-exec-tor-gpl/409.13.0/resource-exec-tor-gpl-409.13.0.module",
+    "group": "io.github.rodvar.kmp-tor",
+    "module": "resource-exec-tor-gpl",
+    "version": "409.13.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-exec-tor-gpl-jvm-409.13.0.jar",
+          "url": "resource-exec-tor-gpl-jvm-409.13.0.jar",
+          "size": 67245,
+          "sha512": "e5d0e7b586cb61fba25ac2a304cc874a1bff019b598ecc249e77dcf4d8b98824c7f5f77244aba1a3e8468aa9a8331a55f4b0c07dd61f9d3d524f9d24eae9277d",
+          "sha256": "82407befe428f54026bb07aa8af35d775d290702e833db1c247381180d2d2df8",
+          "sha1": "d4797aa742869b339841c7ff505c964be019ac51",
+          "md5": "d8b6aed890b7e426a98b96756f38b4de"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.github.rodvar.kmp-tor",
+          "module": "resource-lib-tor-gpl",
+          "version": {
+            "requires": "409.13.0"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "io.github.rodvar.kmp-tor",
+          "module": "resource-geoip",
+          "version": {
+            "requires": "409.13.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-exec-tor-gpl-jvm-409.13.0.jar",
+          "url": "resource-exec-tor-gpl-jvm-409.13.0.jar",
+          "size": 67245,
+          "sha512": "e5d0e7b586cb61fba25ac2a304cc874a1bff019b598ecc249e77dcf4d8b98824c7f5f77244aba1a3e8468aa9a8331a55f4b0c07dd61f9d3d524f9d24eae9277d",
+          "sha256": "82407befe428f54026bb07aa8af35d775d290702e833db1c247381180d2d2df8",
+          "sha1": "d4797aa742869b339841c7ff505c964be019ac51",
+          "md5": "d8b6aed890b7e426a98b96756f38b4de"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "resource-exec-tor-gpl-jvm-409.13.0-sources.jar",
+          "url": "resource-exec-tor-gpl-jvm-409.13.0-sources.jar",
+          "size": 12121,
+          "sha512": "37f56e8ec8bda4a5d3fb737f7e7889218e6000299324f3ca9374b0c3a042a5b2a86a70b40640409b43af7cc26ff01964c880d108d22603f0ab7058d354111e91",
+          "sha256": "9f273b5fbafbbca216e24d76707f6d2bc5068e9a54e21e2938f6aa3207350199",
+          "sha1": "754bd1ba103cb909705d2dc3125014c9332c8935",
+          "md5": "ae7996defa2e35f088ebdb28369bbb2a"
+        }
+      ]
+    }
+  ]
+}

@@ -3,11 +3,11 @@
   <groupId>io.github.rodvar.kmp-tor</groupId>
   <artifactId>resource-geoip-androidnativex86</artifactId>
   <versioning>
-    <latest>409.13.0-rc1</latest>
-    <release>409.13.0-rc1</release>
+    <latest>409.13.0</latest>
+    <release>409.13.0</release>
     <versions>
-      <version>409.13.0-rc1</version>
+      <version>409.13.0</version>
     </versions>
-    <lastUpdated>20260925043154</lastUpdated>
+    <lastUpdated>20260925080315</lastUpdated>
   </versioning>
 </metadata>

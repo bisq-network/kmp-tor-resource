@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-exec-tor/409.13.0/resource-exec-tor-409.13.0.module",
+    "group": "io.github.rodvar.kmp-tor",
+    "module": "resource-exec-tor",
+    "version": "409.13.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-exec-tor-iosX64Main-409.13.0.klib",
+          "url": "resource-exec-tor-iosx64-409.13.0.klib",
+          "size": 10979,
+          "sha512": "050eed15a04b230401044549d8bfc3fe5fefc4f3326e51f669454d2a9191826be77f13beaabdeb7e0425d0de8a8c1d61a79fe3ed9f4f72b51647ac6bd958c6eb",
+          "sha256": "0ed91459ee402383f8d667a73cfed81842ee98a3e78eec6c97e54bf5bd05005e",
+          "sha1": "a92436da73a0a7271b787c48fa6573f22a91d8a6",
+          "md5": "4a8a9bf73eedcab697112ecddc5c0c2c"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "resource-exec-tor-iosx64-409.13.0-sources.jar",
+          "url": "resource-exec-tor-iosx64-409.13.0-sources.jar",
+          "size": 6583,
+          "sha512": "c672902ffe5b9f28d8e76f0dfd9dd4fe8d2a381f660a30347ead749c5fc23472992292a87a63b9ad0732bc2aa39f1c1692b08a0979843af2db2ada52d6030612",
+          "sha256": "af3de202fcd1cef7fd760a62b7de77835b0cddba5b9713bb11f501092155debc",
+          "sha1": "0ab8e635b48456d64de623d6a8206730e958cab9",
+          "md5": "41d5ad4e86dfb2a4f930f092d1325c02"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-exec-tor-iosx64-409.13.0-metadata.jar",
+          "url": "resource-exec-tor-iosx64-409.13.0-metadata.jar",
+          "size": 6748,
+          "sha512": "83ad49a56854efbe77c1c8a2293177311318c676ebfeb5574f5681d900322e22e3b9b399ecca24a43baf404198391c21c9ab122f52580c497052a50953534c55",
+          "sha256": "963c5dedff1d6a2a6d6d1ec8956e014580c2d0c134400481be83edee7fde51d7",
+          "sha1": "f6eb7f036e54a86d87ea2101fd7e6ca406c75da0",
+          "md5": "4262d373ef034cc5b63e630170780f1f"
+        }
+      ]
+    }
+  ]
+}
