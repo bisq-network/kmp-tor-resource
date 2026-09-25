@@ -20,7 +20,7 @@ plugins {
 gradlePlugin {
     plugins {
         create("kmpTorResourceFilterJarPlugin") {
-            id = "io.matthewnelson.kmp.tor.resource-filterjar"
+            id = "io.github.rodvar.kmp-tor.resource-filterjar"
             implementationClass = "io.matthewnelson.kmp.tor.resource.filterjar.KmpTorResourceFilterJarPlugin"
         }
     }

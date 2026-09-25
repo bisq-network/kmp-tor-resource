@@ -27,10 +27,16 @@ This is [bisq-network/kmp-tor-resource](https://github.com/bisq-network/kmp-tor-
 security releases for the Bisq apps ahead of the upstream release cadence. Changes are kept
 upstreamable and offered back as pull requests.
 
-- Artifacts are published under group `network.bisq.kmp-tor` (same artifact ids, package names and
-  plugin ids as upstream) to a Maven repository served by GitHub Pages:
-  `https://bisq-network.github.io/kmp-tor-resource/maven/`. Every file is GPG signed and a
-  `SHA256SUMS-<version>` file sits next to them; each release on GitHub carries the same list.
+- Releases are published to Maven Central under group `io.github.rodvar.kmp-tor` (same artifact ids
+  and package names as upstream). The two Gradle plugins are `io.github.rodvar.kmp-tor.resource-frameworks`
+  and `io.github.rodvar.kmp-tor.resource-filterjar`, because Maven Central only accepts plugin ids
+  under a namespace the publisher owns. The namespace is the publishing maintainer's, the same
+  trust model as the upstream `io.matthewnelson` coordinates; once a Bisq-owned namespace
+  (`network.bisq`) is verified the same tags are re-published there and consumers swap the group.
+- The same files are mirrored to a Maven repository served by GitHub Pages,
+  `https://bisq-network.github.io/kmp-tor-resource/maven/`, which also hosts `-SNAPSHOT` builds
+  published by hand from a branch. Every file is GPG signed and a `SHA256SUMS-<version>` file sits
+  next to them; each release on GitHub carries the same list.
 - Signing key: `Bisq kmp-tor-resource signing <kmp-tor-resource@bisq.network>`, fingerprint
   `4ECE E529 847B 49F1 81D6 9A7C 9BC4 7C3D 2AE1 FF8B`. The public key is committed as
   [`kmp-tor-resource-signing-key.asc`](kmp-tor-resource-signing-key.asc) and published on
@@ -49,22 +55,30 @@ upstreamable and offered back as pull requests.
 - Every published version rebuilds reproducibly: run the [validation steps](#build-reproducibility)
   against the tag and compare with the hashes in `build-logic`.
 
-Consumer setup (Gradle Kotlin DSL), restricting the repository to this group so it can never
-shadow anything else:
+Consumer setup (Gradle Kotlin DSL). Releases resolve from `mavenCentral()`; the GitHub Pages
+mirror is only needed for `-SNAPSHOT` builds and is restricted to this group so it can never shadow
+anything else:
 
 ```kotlin
 repositories {
+    mavenCentral()
+    // Snapshots only
     maven("https://bisq-network.github.io/kmp-tor-resource/maven/") {
-        content { includeGroup("network.bisq.kmp-tor") }
+        content { includeGroup("io.github.rodvar.kmp-tor") }
     }
 }
 dependencies {
-    implementation("network.bisq.kmp-tor:resource-exec-tor-gpl:409.13.0")   // Android
-    implementation("network.bisq.kmp-tor:resource-noexec-tor-gpl:409.13.0") // iOS
+    implementation("io.github.rodvar.kmp-tor:resource-exec-tor-gpl:409.13.0")   // Android
+    implementation("io.github.rodvar.kmp-tor:resource-noexec-tor-gpl:409.13.0") // iOS
 }
 ```
 
-Publishing is done by the [Publish workflow](.github/workflows/publish.yml) on a release tag.
+Publishing is done by the [Publish workflow](.github/workflows/publish.yml). A release is: set
+`VERSION_NAME` in `gradle.properties` to the release version, push the tag with the same name, and
+once the workflow has validated the deployment, release it in the
+[Central Portal](https://central.sonatype.com/publishing/deployments). A manual dispatch publishes a
+branch to GitHub Pages, and with `maven_central` set also rehearses the Central upload: use an
+`-rcN` version for that and drop the validated deployment in the portal instead of releasing it.
 
 ### Build Reproducibility
 

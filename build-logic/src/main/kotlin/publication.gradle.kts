@@ -29,6 +29,25 @@ publishing {
     }
 }
 
+// Bisq fork: the POM keeps the upstream author from gradle.properties and adds the fork and the
+// maintainer whose Central namespace the io.github.rodvar.kmp-tor coordinates live under.
+mavenPublishing {
+    pom {
+        developers {
+            developer {
+                id.set("bisq-network")
+                name.set("Bisq Network")
+                url.set("https://github.com/bisq-network/")
+            }
+            developer {
+                id.set("rodvar")
+                name.set("rodvar")
+                url.set("https://github.com/rodvar/")
+            }
+        }
+    }
+}
+
 tasks.withType<AbstractArchiveTask>().configureEach {
     isPreserveFileTimestamps = false
     isReproducibleFileOrder = true

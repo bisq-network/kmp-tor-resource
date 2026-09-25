@@ -1,17 +1,32 @@
 name: Publish
 
-# Bisq fork. Publishes the Maven artifacts of a release tag (or of the current branch on
-# manual dispatch) to the gh-pages branch, served by GitHub Pages as a Maven repository:
+# Bisq fork. Publishes the Maven artifacts under group io.github.rodvar.kmp-tor.
+#
+# A release tag publishes to Maven Central (Central Portal, namespace io.github.rodvar) and to the
+# gh-pages branch, served by GitHub Pages as a Maven repository:
 #
 #   https://bisq-network.github.io/kmp-tor-resource/maven/
+#
+# A manual dispatch publishes the current branch to GitHub Pages only, unless maven_central is
+# set, which rehearses the Central path too. Rehearse with an -rcN version: it uploads a normal
+# deployment that is validated but not released, drop it in the Central Portal afterwards. A
+# -SNAPSHOT version would need SNAPSHOT publishing enabled on the namespace, which the portal
+# currently refuses for io.github.rodvar.
+#
+# Central deployments are validated but not released here: releasing is a manual step in the
+# Central Portal until a few releases have gone through, then switch the task to
+# publishAndReleaseToMavenCentral.
 #
 # Only what Bisq ships is built: Android, JVM (host binaries for the runtime's tests) and
 # iOS. Apple binaries carry a deterministic ad-hoc signature, Windows binaries are unsigned,
 # see README.
 #
-# Secrets (repository or organisation level):
-#   MAVEN_GPG_PRIVATE_KEY   ASCII-armored private key used to sign every artifact
-#   MAVEN_GPG_PASSPHRASE    its passphrase
+# Secrets (on the maven-central environment):
+#   MAVEN_GPG_PRIVATE_KEY     ASCII-armored private key used to sign every artifact; its public
+#                             half must be on keys.openpgp.org (Central verifies signatures there)
+#   MAVEN_GPG_PASSPHRASE      its passphrase
+#   MAVEN_CENTRAL_USERNAME    Central Portal user token, username half
+#   MAVEN_CENTRAL_PASSWORD    Central Portal user token, password half
 # GitHub Pages must be enabled with the gh-pages branch as source.
 
 on:
@@ -21,6 +36,10 @@ on:
     inputs:
       unsigned:
         description: 'Publish without GPG signatures (testing only, never for a tag)'
+        type: boolean
+        default: false
+      maven_central:
+        description: 'Also publish to Maven Central (a -SNAPSHOT version goes to the Central snapshot repository)'
         type: boolean
         default: false
 
@@ -167,6 +186,10 @@ jobs:
               exit 1
             fi
           fi
+          if [ "${{ inputs.maven_central }}" = "true" ] && [ "${{ inputs.unsigned }}" = "true" ]; then
+            echo "Maven Central requires signed artifacts"
+            exit 1
+          fi
           echo "version=$VERSION" >> "$GITHUB_ENV"
 
       - name: Publish To Maven Layout
@@ -188,6 +211,10 @@ jobs:
       - name: Checksums
         run: |
           cd build/maven-repo
+          if [ "${{ inputs.unsigned }}" != "true" ] && [ "$(find . -name '*.asc' | wc -l)" -eq 0 ]; then
+            echo "Signing was enabled but no .asc files were produced"
+            exit 1
+          fi
           find . -type f ! -name '*.asc' ! -name '*.md5' ! -name '*.sha1' ! -name '*.sha256' ! -name '*.sha512' \
             | sort | xargs shasum -a 256 > "$GITHUB_WORKSPACE/SHA256SUMS"
           wc -l "$GITHUB_WORKSPACE/SHA256SUMS"
@@ -211,6 +238,24 @@ jobs:
           git commit -m "Publish ${{ env.version }} (${{ github.sha }})" || echo "nothing to publish"
           git push origin HEAD:gh-pages
 
+      # Uploads one deployment for the whole build (the maven publish plugin bundles every
+      # module into a single zip), validates it and stops. Release it in the Central Portal.
+      - name: Publish To Maven Central
+        if: github.ref_type == 'tag' || inputs.maven_central == true
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+        run: |
+          if [ -z "$ORG_GRADLE_PROJECT_mavenCentralUsername" ] || [ -z "$ORG_GRADLE_PROJECT_mavenCentralPassword" ]; then
+            echo "MAVEN_CENTRAL_USERNAME / MAVEN_CENTRAL_PASSWORD secrets are not set"
+            exit 1
+          fi
+          ./gradlew publishToMavenCentral --stacktrace \
+            -PKMP_TARGETS="$KMP_TARGETS" \
+            -PRELEASE_SIGNING_ENABLED="true"
+
       - name: Create GitHub Release
         if: github.ref_type == 'tag'
         env:
@@ -220,8 +265,9 @@ jobs:
           {
             echo "kmp-tor-resource ${{ github.ref_name }}, ${TOR}, built from ${{ github.sha }}."
             echo
-            echo "Maven repository: https://bisq-network.github.io/kmp-tor-resource/maven/"
-            echo "Group: network.bisq.kmp-tor"
+            echo "Group: io.github.rodvar.kmp-tor"
+            echo "Maven Central: https://central.sonatype.com/namespace/io.github.rodvar.kmp-tor (release the validated deployment in the Central Portal if the version is not listed yet)"
+            echo "GitHub Pages mirror: https://bisq-network.github.io/kmp-tor-resource/maven/"
             echo
             echo "SHA256SUMS lists every published file. Rebuild the tag with external/task.sh and compare against build-logic to verify."
           } > RELEASE_NOTES.md
