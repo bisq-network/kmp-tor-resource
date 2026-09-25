@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## Version 409.13.0 (2026-09-25)
+ - Updates `tor` to `tor-0.4.9.13` [[#5]][bisq-5]
+ - Publishes to Maven Central under group `io.github.rodvar.kmp-tor` [[#4]][bisq-4]
+
+## Version 409.12.0 (2026-09-24)
+ - Bisq fork of [05nelsonm/kmp-tor-resource](https://github.com/05nelsonm/kmp-tor-resource)
+ - Updates `tor` to `tor-0.4.9.12` [[#1]][bisq-1]
+ - Publishes Android, JVM and iOS artifacts under a Bisq group id [[#2]][bisq-2]
+ - Ad-hoc signs Apple binaries so the iOS Simulator can load `libtor` [[#3]][bisq-3]
+
 ## Version 409.5.0 (2026-02-15)
  - Updates `tor` to `tor-0.4.9.5` [[#191]][191]
 
@@ -215,3 +225,9 @@
 [url-build-env]: https://github.com/05nelsonm/build-env
 [url-cklib]: https://github.com/touchlab/cklib
 [url-resource-filterjar-gradle-plugin]: https://github.com/05nelsonm/kmp-tor-resource/tree/master/library/resource-filterjar-gradle-plugin
+
+[bisq-1]: https://github.com/bisq-network/kmp-tor-resource/pull/1
+[bisq-2]: https://github.com/bisq-network/kmp-tor-resource/pull/2
+[bisq-3]: https://github.com/bisq-network/kmp-tor-resource/pull/3
+[bisq-4]: https://github.com/bisq-network/kmp-tor-resource/pull/4
+[bisq-5]: https://github.com/bisq-network/kmp-tor-resource/pull/5
