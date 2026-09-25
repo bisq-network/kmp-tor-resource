@@ -49,6 +49,9 @@ jobs:
           for FILE in external/task.sh external/source.task/*.sh; do
             HASHES+="$(sha256sum "$FILE" | cut -d ' ' -f 1)"
           done
+          # The submodule commits decide what gets compiled, so a tor (or dependency) bump must
+          # never be served from an artifact built for the previous tag.
+          HASHES+="$(git ls-tree HEAD external/ | sha256sum | cut -d ' ' -f 1)"
           COMBINED="$(echo "$HASHES" | sha256sum - | cut -d ' ' -f 1)"
           echo "rv-hash=$COMBINED" >> "$GITHUB_ENV"
 
