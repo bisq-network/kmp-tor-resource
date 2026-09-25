@@ -27,10 +27,12 @@ This is [bisq-network/kmp-tor-resource](https://github.com/bisq-network/kmp-tor-
 security releases for the Bisq apps ahead of the upstream release cadence. Changes are kept
 upstreamable and offered back as pull requests.
 
-- Releases are published to Maven Central under group `network.bisq.kmp-tor` (same artifact ids
-  and package names as upstream). The two Gradle plugins are `network.bisq.kmp-tor.resource-frameworks`
-  and `network.bisq.kmp-tor.resource-filterjar`, because Maven Central only accepts plugin ids
-  under a namespace the publisher owns.
+- Releases are published to Maven Central under group `io.github.rodvar.kmp-tor` (same artifact ids
+  and package names as upstream). The two Gradle plugins are `io.github.rodvar.kmp-tor.resource-frameworks`
+  and `io.github.rodvar.kmp-tor.resource-filterjar`, because Maven Central only accepts plugin ids
+  under a namespace the publisher owns. The namespace is the publishing maintainer's, the same
+  trust model as the upstream `io.matthewnelson` coordinates; once a Bisq-owned namespace
+  (`network.bisq`) is verified the same tags are re-published there and consumers swap the group.
 - The same files are mirrored to a Maven repository served by GitHub Pages,
   `https://bisq-network.github.io/kmp-tor-resource/maven/`, which also hosts `-SNAPSHOT` builds
   published by hand from a branch. Every file is GPG signed and a `SHA256SUMS-<version>` file sits
@@ -62,12 +64,12 @@ repositories {
     mavenCentral()
     // Snapshots only
     maven("https://bisq-network.github.io/kmp-tor-resource/maven/") {
-        content { includeGroup("network.bisq.kmp-tor") }
+        content { includeGroup("io.github.rodvar.kmp-tor") }
     }
 }
 dependencies {
-    implementation("network.bisq.kmp-tor:resource-exec-tor-gpl:409.13.0")   // Android
-    implementation("network.bisq.kmp-tor:resource-noexec-tor-gpl:409.13.0") // iOS
+    implementation("io.github.rodvar.kmp-tor:resource-exec-tor-gpl:409.13.0")   // Android
+    implementation("io.github.rodvar.kmp-tor:resource-noexec-tor-gpl:409.13.0") // iOS
 }
 ```
 
@@ -75,7 +77,8 @@ Publishing is done by the [Publish workflow](.github/workflows/publish.yml). A r
 `VERSION_NAME` in `gradle.properties` to the release version, push the tag with the same name, and
 once the workflow has validated the deployment, release it in the
 [Central Portal](https://central.sonatype.com/publishing/deployments). A manual dispatch publishes a
-branch to GitHub Pages, and with `maven_central` set also rehearses the Central upload.
+branch to GitHub Pages, and with `maven_central` set also rehearses the Central upload: use an
+`-rcN` version for that and drop the validated deployment in the portal instead of releasing it.
 
 ### Build Reproducibility
 

@@ -1,15 +1,17 @@
 name: Publish
 
-# Bisq fork. Publishes the Maven artifacts under group network.bisq.kmp-tor.
+# Bisq fork. Publishes the Maven artifacts under group io.github.rodvar.kmp-tor.
 #
-# A release tag publishes to Maven Central (Central Portal, namespace network.bisq) and to the
+# A release tag publishes to Maven Central (Central Portal, namespace io.github.rodvar) and to the
 # gh-pages branch, served by GitHub Pages as a Maven repository:
 #
 #   https://bisq-network.github.io/kmp-tor-resource/maven/
 #
 # A manual dispatch publishes the current branch to GitHub Pages only, unless maven_central is
-# set, which rehearses the Central path too (a -SNAPSHOT version lands in the Central snapshot
-# repository, never in a release deployment).
+# set, which rehearses the Central path too. Rehearse with an -rcN version: it uploads a normal
+# deployment that is validated but not released, drop it in the Central Portal afterwards. A
+# -SNAPSHOT version would need SNAPSHOT publishing enabled on the namespace, which the portal
+# currently refuses for io.github.rodvar.
 #
 # Central deployments are validated but not released here: releasing is a manual step in the
 # Central Portal until a few releases have gone through, then switch the task to
@@ -19,7 +21,7 @@ name: Publish
 # iOS. Apple binaries carry a deterministic ad-hoc signature, Windows binaries are unsigned,
 # see README.
 #
-# Secrets (repository or organisation level):
+# Secrets (on the maven-central environment):
 #   MAVEN_GPG_PRIVATE_KEY     ASCII-armored private key used to sign every artifact; its public
 #                             half must be on keys.openpgp.org (Central verifies signatures there)
 #   MAVEN_GPG_PASSPHRASE      its passphrase
@@ -263,8 +265,8 @@ jobs:
           {
             echo "kmp-tor-resource ${{ github.ref_name }}, ${TOR}, built from ${{ github.sha }}."
             echo
-            echo "Group: network.bisq.kmp-tor"
-            echo "Maven Central: https://central.sonatype.com/namespace/network.bisq.kmp-tor (release the validated deployment in the Central Portal if the version is not listed yet)"
+            echo "Group: io.github.rodvar.kmp-tor"
+            echo "Maven Central: https://central.sonatype.com/namespace/io.github.rodvar.kmp-tor (release the validated deployment in the Central Portal if the version is not listed yet)"
             echo "GitHub Pages mirror: https://bisq-network.github.io/kmp-tor-resource/maven/"
             echo
             echo "SHA256SUMS lists every published file. Rebuild the tag with external/task.sh and compare against build-logic to verify."

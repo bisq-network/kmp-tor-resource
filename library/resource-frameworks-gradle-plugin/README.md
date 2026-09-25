@@ -12,7 +12,7 @@ in order to load `tor`.
 - Add the plugin to your **root project's** `build.gradle(.kts)` file 
   ```kotlin
   plugins {
-    id("network.bisq.kmp-tor.resource-frameworks") version("409.12.0")
+    id("io.github.rodvar.kmp-tor.resource-frameworks") version("409.12.0")
   }
   ```
 
