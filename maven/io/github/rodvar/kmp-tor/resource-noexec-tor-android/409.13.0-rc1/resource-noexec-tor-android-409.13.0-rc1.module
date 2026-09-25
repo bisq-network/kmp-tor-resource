@@ -1,0 +1,205 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-noexec-tor/409.13.0-rc1/resource-noexec-tor-409.13.0-rc1.module",
+    "group": "io.github.rodvar.kmp-tor",
+    "module": "resource-noexec-tor",
+    "version": "409.13.0-rc1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-noexec-tor-release.aar",
+          "url": "resource-noexec-tor-android-409.13.0-rc1.aar",
+          "size": 53961,
+          "sha512": "e9081a7ef0c5ef9850148b6d2654fb3cc4f3a3623126a4934f1708f45a8828a5644ae071fec0ab833b276bbb0edc7721df07d6459c07c7935abd79641d6d20a9",
+          "sha256": "9536a119512c1decfa670bffbc7ec3952976f7e3c67689fe5fcbd174438fa037",
+          "sha1": "294adfd16d6f619959e997b8f1032d619fa084f1",
+          "md5": "28797e8d791919b634a98609bc95df85"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "io.github.rodvar.kmp-tor",
+          "module": "resource-lib-tor",
+          "version": {
+            "requires": "409.13.0-rc1"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "io.github.rodvar.kmp-tor",
+          "module": "resource-geoip",
+          "version": {
+            "requires": "409.13.0-rc1"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-noexec-tor-release.aar",
+          "url": "resource-noexec-tor-android-409.13.0-rc1.aar",
+          "size": 53961,
+          "sha512": "e9081a7ef0c5ef9850148b6d2654fb3cc4f3a3623126a4934f1708f45a8828a5644ae071fec0ab833b276bbb0edc7721df07d6459c07c7935abd79641d6d20a9",
+          "sha256": "9536a119512c1decfa670bffbc7ec3952976f7e3c67689fe5fcbd174438fa037",
+          "sha1": "294adfd16d6f619959e997b8f1032d619fa084f1",
+          "md5": "28797e8d791919b634a98609bc95df85"
+        }
+      ]
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "resource-noexec-tor-android-409.13.0-rc1-sources.jar",
+          "url": "resource-noexec-tor-android-409.13.0-rc1-sources.jar",
+          "size": 17291,
+          "sha512": "0d2d40b1cce34e1aa72e6c08cd205f9cb52d48cf6bb9b766349794979b1f786ace22ae2b02a1bab5d43d28fba638dca2b34997512d8b83fbff66d26b39b254f6",
+          "sha256": "0c5367cd4f29c0257e07adca0fe13dbe1f4494c032ae2a0790c9bef12bd07c25",
+          "sha1": "21394573ca9475ca430d6ef4a5da5c2978a02523",
+          "md5": "0ee764f4d73e5c57b740ffddf72fcb23"
+        }
+      ]
+    }
+  ]
+}

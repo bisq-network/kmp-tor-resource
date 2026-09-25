@@ -1,0 +1,114 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-android-unit-test-tor/409.13.0-rc1/resource-android-unit-test-tor-409.13.0-rc1.module",
+    "group": "io.github.rodvar.kmp-tor",
+    "module": "resource-android-unit-test-tor",
+    "version": "409.13.0-rc1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-android-unit-test-tor-release.aar",
+          "url": "resource-android-unit-test-tor-android-409.13.0-rc1.aar",
+          "size": 62316323,
+          "sha512": "0a8c8a3b2f3bb74287d91b0795ac6473d4b72ba655310aad173faefe0f85ccb3bb660dbf0feb43c43f8e0b20b836ab81c6bc118d2bae1f7550240721c4300572",
+          "sha256": "8d5938538cfc2ca9720959b12a16484f5cc9aa1cdc1bcbd9b646e2d20936ac16",
+          "sha1": "60e333cfcde912b47ea8ae1280f0ef26e8a81423",
+          "md5": "42f8dd5ce89d6657974e865532aeda0a"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-android-unit-test-tor-release.aar",
+          "url": "resource-android-unit-test-tor-android-409.13.0-rc1.aar",
+          "size": 62316323,
+          "sha512": "0a8c8a3b2f3bb74287d91b0795ac6473d4b72ba655310aad173faefe0f85ccb3bb660dbf0feb43c43f8e0b20b836ab81c6bc118d2bae1f7550240721c4300572",
+          "sha256": "8d5938538cfc2ca9720959b12a16484f5cc9aa1cdc1bcbd9b646e2d20936ac16",
+          "sha1": "60e333cfcde912b47ea8ae1280f0ef26e8a81423",
+          "md5": "42f8dd5ce89d6657974e865532aeda0a"
+        }
+      ]
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "resource-android-unit-test-tor-android-409.13.0-rc1-sources.jar",
+          "url": "resource-android-unit-test-tor-android-409.13.0-rc1-sources.jar",
+          "size": 2635,
+          "sha512": "a1ee7f658f0314d0c2f5eac5fe77278e617f7ba233f888316a7843254b0e66eee171e68b4c426657a1c9dd3a5d8fb1d6c945811285af35ebb8a7fe4197533ee7",
+          "sha256": "49113d5c3ae39ba080c49a8b6a0cb8bf0dfb9f6cb10df6d95892b83a1b380750",
+          "sha1": "b0362b4dcbaa0b6dd486d1bc571586572e0a6569",
+          "md5": "a01342f64298435e56d85bfea1f43da5"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-noexec-tor-gpl/409.13.0-rc1/resource-noexec-tor-gpl-409.13.0-rc1.module",
+    "group": "io.github.rodvar.kmp-tor",
+    "module": "resource-noexec-tor-gpl",
+    "version": "409.13.0-rc1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-noexec-tor-gpl-jvm-409.13.0-rc1.jar",
+          "url": "resource-noexec-tor-gpl-jvm-409.13.0-rc1.jar",
+          "size": 221245,
+          "sha512": "f3477c9ac53aa803aed87ca4f5e11b628ac50305be79c221c0d28033e3d0ae6fd233b1ac06e8b0c47ba2f76b2cd3b54c39ef74dbd55dbf675b7748139c31d237",
+          "sha256": "623b873c4ebb533ef7491d1b72cf4fffff29df855ce1211ec2a5f0ec93f64e22",
+          "sha1": "91cfbc9c1e44b7c073cf057a4fc68909ad1396e9",
+          "md5": "b91a4594242749057254a951fbe7244a"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.github.rodvar.kmp-tor",
+          "module": "resource-lib-tor-gpl",
+          "version": {
+            "requires": "409.13.0-rc1"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "io.github.rodvar.kmp-tor",
+          "module": "resource-geoip",
+          "version": {
+            "requires": "409.13.0-rc1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-noexec-tor-gpl-jvm-409.13.0-rc1.jar",
+          "url": "resource-noexec-tor-gpl-jvm-409.13.0-rc1.jar",
+          "size": 221245,
+          "sha512": "f3477c9ac53aa803aed87ca4f5e11b628ac50305be79c221c0d28033e3d0ae6fd233b1ac06e8b0c47ba2f76b2cd3b54c39ef74dbd55dbf675b7748139c31d237",
+          "sha256": "623b873c4ebb533ef7491d1b72cf4fffff29df855ce1211ec2a5f0ec93f64e22",
+          "sha1": "91cfbc9c1e44b7c073cf057a4fc68909ad1396e9",
+          "md5": "b91a4594242749057254a951fbe7244a"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "resource-noexec-tor-gpl-jvm-409.13.0-rc1-sources.jar",
+          "url": "resource-noexec-tor-gpl-jvm-409.13.0-rc1-sources.jar",
+          "size": 16079,
+          "sha512": "8e1a4272f0ac4f36151ef9845ff6af6193eeb4fe9d19aed414cf8d8e5fc74f798ab8af0fd9799030ae3032af03014c7f1bec68c299656afa6f96b694fc6f4c00",
+          "sha256": "f423691ca5669067c376262f1dd56bf5b576bef88f3d84b20526347e4e825e6c",
+          "sha1": "392a988d76375a1bcb9decbc99922b8b95f009de",
+          "md5": "d6538bbd34cb0d58004fedc3cf1e6cc0"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-lib-tor-gpl/409.13.0-rc1/resource-lib-tor-gpl-409.13.0-rc1.module",
+    "group": "io.github.rodvar.kmp-tor",
+    "module": "resource-lib-tor-gpl",
+    "version": "409.13.0-rc1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-lib-tor-gpl-iosSimulatorArm64Main-409.13.0-rc1.klib",
+          "url": "resource-lib-tor-gpl-iossimulatorarm64-409.13.0-rc1.klib",
+          "size": 6397992,
+          "sha512": "00648fe25ec61c837de4e2850d27181b55aa529c8cd226a6db73aa1b93273fa5a7c2505540999bd9851421f5117e700953a5cba0b1ade64a5bb1e0a51075af33",
+          "sha256": "6362dcb53e3762b5a034036a35290325c8a89ba5abcc079c5f31e24fe7f1fa5d",
+          "sha1": "fa329d5dd0b92bd4bccfd9cf0d1b9fd0242bb516",
+          "md5": "6c17574f96fba871bb95a4a43b6b0ef6"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "resource-lib-tor-gpl-iossimulatorarm64-409.13.0-rc1-sources.jar",
+          "url": "resource-lib-tor-gpl-iossimulatorarm64-409.13.0-rc1-sources.jar",
+          "size": 3073220,
+          "sha512": "8fd69d0c963b5a16ba2c06f037c59d495d89e304b4d96cdd326c0de4dafc8c991cb210467765903b2516bed039e899e5e12240dbf073caef9e498980d09805ca",
+          "sha256": "2b4f9b18686a9808b2d275e3de9af2f466ba6fffb00ce7ffb2ab1e78610843ef",
+          "sha1": "2204cfbd389171b937894bce3c79586d29c3461c",
+          "md5": "0e275e1541e865f68f82dc4aeb17b050"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-lib-tor-gpl-iossimulatorarm64-409.13.0-rc1-metadata.jar",
+          "url": "resource-lib-tor-gpl-iossimulatorarm64-409.13.0-rc1-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}
