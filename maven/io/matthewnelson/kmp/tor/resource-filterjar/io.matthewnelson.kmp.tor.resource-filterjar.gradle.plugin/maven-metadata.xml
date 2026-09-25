@@ -3,10 +3,10 @@
   <groupId>io.matthewnelson.kmp.tor.resource-filterjar</groupId>
   <artifactId>io.matthewnelson.kmp.tor.resource-filterjar.gradle.plugin</artifactId>
   <versioning>
-    <latest>409.12.0-SNAPSHOT</latest>
+    <latest>409.13.0-SNAPSHOT</latest>
     <versions>
-      <version>409.12.0-SNAPSHOT</version>
+      <version>409.13.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20260924030517</lastUpdated>
+    <lastUpdated>20260925014602</lastUpdated>
   </versioning>
 </metadata>

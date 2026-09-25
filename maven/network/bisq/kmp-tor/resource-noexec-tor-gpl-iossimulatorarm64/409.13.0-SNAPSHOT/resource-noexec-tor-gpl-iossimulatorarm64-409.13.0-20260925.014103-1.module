@@ -1,0 +1,169 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-noexec-tor-gpl/409.13.0-SNAPSHOT/resource-noexec-tor-gpl-409.13.0-SNAPSHOT.module",
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-noexec-tor-gpl",
+    "version": "409.13.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "network.bisq.kmp-tor",
+          "module": "resource-lib-tor-gpl",
+          "version": {
+            "requires": "409.13.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "network.bisq.kmp-tor",
+          "module": "resource-geoip",
+          "version": {
+            "requires": "409.13.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-noexec-tor-gpl-iosSimulatorArm64Main-409.13.0-SNAPSHOT.klib",
+          "url": "resource-noexec-tor-gpl-iossimulatorarm64-409.13.0-SNAPSHOT.klib",
+          "size": 37688,
+          "sha512": "74a753f2a67ea0fe8ac4312f9082ed1726ca05ca57b97bcf83b620432113a90dc863b2495e6a30833efcab0dd0a1cf9ac98b869a81fc0cd6cd157843037846d7",
+          "sha256": "8f956069bb0871a51874509048c7e0f3a463e1631d4fd68aeb11c3e9dd3a4266",
+          "sha1": "822c8156498e3872dda4c5625e00c352af64a85f",
+          "md5": "c4f145e780deb0f1815b305e3cc2537c"
+        },
+        {
+          "name": "resource-noexec-tor-gpl-iosSimulatorArm64Cinterop-kmp_torMain-409.13.0-SNAPSHOT.klib",
+          "url": "resource-noexec-tor-gpl-iossimulatorarm64-409.13.0-SNAPSHOT-cinterop-kmp_tor.klib",
+          "size": 11359,
+          "sha512": "7cb5d65582cc6bdf18618f232eecd5dcdfdd5823c517389cbbe3369b0606114f5f122f2bd17d564f329caeca7e982f7bd19e181def285aaa5f62023f8f935b22",
+          "sha256": "b06b95eb4c85d24bc7602857780dfa09f4e05c6028b001d8c671b535ede6dadf",
+          "sha1": "fd8a5936d757ee71de153f13de44fd95ef9e8903",
+          "md5": "c4e40dc7ef8bcf74d7a7bb3d5e528f32"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "resource-noexec-tor-gpl-iossimulatorarm64-409.13.0-SNAPSHOT-sources.jar",
+          "url": "resource-noexec-tor-gpl-iossimulatorarm64-409.13.0-SNAPSHOT-sources.jar",
+          "size": 19122,
+          "sha512": "9ebe2031b12a7baea328cafcee293162cbc77a0376e97a0a8857f42504754de2141ed4f676c8417728a4053e424664d56e2d91423ce3b65ca68edbda3ade9253",
+          "sha256": "c943d9a64f1972dfd0be00d9a0f6951f59e231f24cf0df93c10a7ab04ddfb165",
+          "sha1": "086828357c142f69052183c0d020b00fce5a81ab",
+          "md5": "6756f9034be652607c6166e676169fb8"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "network.bisq.kmp-tor",
+          "module": "resource-lib-tor-gpl",
+          "version": {
+            "requires": "409.13.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "network.bisq.kmp-tor",
+          "module": "resource-geoip",
+          "version": {
+            "requires": "409.13.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-noexec-tor-gpl-iossimulatorarm64-409.13.0-SNAPSHOT-metadata.jar",
+          "url": "resource-noexec-tor-gpl-iossimulatorarm64-409.13.0-SNAPSHOT-metadata.jar",
+          "size": 25777,
+          "sha512": "7da8f9e3358eba714d7279b7d31b61dc368ca3a1acf1129dc71e59dcab24a4901474af9cb514c7face1330e23a62f40096a9c301de8529e3d05f2a40c7be90e8",
+          "sha256": "e1a68d9c03cca527eea5eceaf77603ff817609c3ad17acd3e64367533c77f570",
+          "sha1": "352647fab5c88875f3ebae0c18f8d1fe70e21196",
+          "md5": "505495f2f1807fca6eda72f554b6790a"
+        }
+      ]
+    }
+  ]
+}

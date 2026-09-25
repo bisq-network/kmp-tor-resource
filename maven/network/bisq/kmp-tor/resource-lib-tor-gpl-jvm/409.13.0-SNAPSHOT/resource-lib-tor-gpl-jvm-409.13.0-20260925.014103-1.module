@@ -1,0 +1,109 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-lib-tor-gpl/409.13.0-SNAPSHOT/resource-lib-tor-gpl-409.13.0-SNAPSHOT.module",
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-lib-tor-gpl",
+    "version": "409.13.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-lib-tor-gpl-jvm-409.13.0-SNAPSHOT.jar",
+          "url": "resource-lib-tor-gpl-jvm-409.13.0-SNAPSHOT.jar",
+          "size": 62529274,
+          "sha512": "7e3309f5c7e520671ca1c8cdce142ce575e516990881db990ae5cdc2f91d27a379679e2aa47cac73c39aa0c41e5c3adb0d0ff9b73b053ccf170c4a790a556140",
+          "sha256": "c9a556e5016e6567301fd3ff98a388bbff51904fe003e7d52856f3483d5aa40e",
+          "sha1": "82b74cb88d86017951826e33630359d3d35e4dfb",
+          "md5": "976808d0e883bbc4847785ac4da3f9e5"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-lib-tor-gpl-jvm-409.13.0-SNAPSHOT.jar",
+          "url": "resource-lib-tor-gpl-jvm-409.13.0-SNAPSHOT.jar",
+          "size": 62529274,
+          "sha512": "7e3309f5c7e520671ca1c8cdce142ce575e516990881db990ae5cdc2f91d27a379679e2aa47cac73c39aa0c41e5c3adb0d0ff9b73b053ccf170c4a790a556140",
+          "sha256": "c9a556e5016e6567301fd3ff98a388bbff51904fe003e7d52856f3483d5aa40e",
+          "sha1": "82b74cb88d86017951826e33630359d3d35e4dfb",
+          "md5": "976808d0e883bbc4847785ac4da3f9e5"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "resource-lib-tor-gpl-jvm-409.13.0-SNAPSHOT-sources.jar",
+          "url": "resource-lib-tor-gpl-jvm-409.13.0-SNAPSHOT-sources.jar",
+          "size": 7603,
+          "sha512": "ea3617cd852634643ca9644b8688f1b42e60c345d90b782ae189b2ec2ee25248f7cddcee7018708540373c67f39fc06976675c5ecbb1aaa5fd83b2fb056ac4da",
+          "sha256": "037c5ef8650245eb35c1e0c18a433b5fc137422a1ed71e16a2e1e10165658e0a",
+          "sha1": "b79d24163b9342df427a0963409c8c84b7fdb3d4",
+          "md5": "621656b990811d80d5ec7421f32df69a"
+        }
+      ]
+    }
+  ]
+}

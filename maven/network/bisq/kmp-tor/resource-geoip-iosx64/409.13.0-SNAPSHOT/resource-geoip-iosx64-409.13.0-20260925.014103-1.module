@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-geoip/409.13.0-SNAPSHOT/resource-geoip-409.13.0-SNAPSHOT.module",
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-geoip",
+    "version": "409.13.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-geoip-iosX64Main-409.13.0-SNAPSHOT.klib",
+          "url": "resource-geoip-iosx64-409.13.0-SNAPSHOT.klib",
+          "size": 9576200,
+          "sha512": "b5e88ee110c014124ea9f2d05fd8bec6d3ef693c2bb06b722afc495536b7b8841c7c7ff95e3e3c6622176fcfce38485b40fb4df9558abbee6a81704655e4e530",
+          "sha256": "477174bcad4e0710e137afcd0393826b290548d9470df10857f58101114e8a9c",
+          "sha1": "a024dd943cae7358b8b5e2b46657ca1678659848",
+          "md5": "69ad249bc9b0a110385ae389575fdf4a"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "resource-geoip-iosx64-409.13.0-SNAPSHOT-sources.jar",
+          "url": "resource-geoip-iosx64-409.13.0-SNAPSHOT-sources.jar",
+          "size": 4588753,
+          "sha512": "1a513a3871b59f3542fde57e12f32b273416964b9d6967acc4e3f5e0db8af1d897de1f7b0f171cb103755c2e0ed00932ed28fefe39d79e76b5b8a476a87dc59b",
+          "sha256": "c62b123bd943ffc2a84b583494584f916166b680ba857796826486bcdca8e96e",
+          "sha1": "17f487177fae67faae85c16119b67e5569ed74fb",
+          "md5": "c8eb36520f269f8f63662e2eab5c4610"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-geoip-iosx64-409.13.0-SNAPSHOT-metadata.jar",
+          "url": "resource-geoip-iosx64-409.13.0-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

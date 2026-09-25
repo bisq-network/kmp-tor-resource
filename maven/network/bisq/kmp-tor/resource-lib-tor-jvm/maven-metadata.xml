@@ -3,10 +3,10 @@
   <groupId>network.bisq.kmp-tor</groupId>
   <artifactId>resource-lib-tor-jvm</artifactId>
   <versioning>
-    <latest>409.12.0-SNAPSHOT</latest>
+    <latest>409.13.0-SNAPSHOT</latest>
     <versions>
-      <version>409.12.0-SNAPSHOT</version>
+      <version>409.13.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20260924030545</lastUpdated>
+    <lastUpdated>20260925014642</lastUpdated>
   </versioning>
 </metadata>

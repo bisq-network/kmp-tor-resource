@@ -1,0 +1,135 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-compilation-lib-tor-gpl/409.13.0-SNAPSHOT/resource-compilation-lib-tor-gpl-409.13.0-SNAPSHOT.module",
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-compilation-lib-tor-gpl",
+    "version": "409.13.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-compilation-lib-tor-gpl-release.aar",
+          "url": "resource-compilation-lib-tor-gpl-android-409.13.0-SNAPSHOT.aar",
+          "size": 14834566,
+          "sha512": "e221ab6b69b0009af4df4ea303d1df3fcd8b7b9d74c2d35c644a70c61535fe39e05059e2f09839a8903245a97f61e5bb5244e3cc51df275a2c20bca9f2d4f3e4",
+          "sha256": "422104fd5d6003a4ef70530b5f225e9fadfab53605e27ca4b2ef4b86ad20b49c",
+          "sha1": "b26a454d7136b2c64186c307c30a65e600f3a28e",
+          "md5": "4c5997b379e9c946092f7368b5c901da"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.startup",
+          "module": "startup-runtime",
+          "version": {
+            "requires": "1.1.1"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-compilation-lib-tor-gpl-release.aar",
+          "url": "resource-compilation-lib-tor-gpl-android-409.13.0-SNAPSHOT.aar",
+          "size": 14834566,
+          "sha512": "e221ab6b69b0009af4df4ea303d1df3fcd8b7b9d74c2d35c644a70c61535fe39e05059e2f09839a8903245a97f61e5bb5244e3cc51df275a2c20bca9f2d4f3e4",
+          "sha256": "422104fd5d6003a4ef70530b5f225e9fadfab53605e27ca4b2ef4b86ad20b49c",
+          "sha1": "b26a454d7136b2c64186c307c30a65e600f3a28e",
+          "md5": "4c5997b379e9c946092f7368b5c901da"
+        }
+      ]
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "resource-compilation-lib-tor-gpl-android-409.13.0-SNAPSHOT-sources.jar",
+          "url": "resource-compilation-lib-tor-gpl-android-409.13.0-SNAPSHOT-sources.jar",
+          "size": 4033,
+          "sha512": "ab98f035bebbfece927f889039fa5562cc31284547a722630244ba66f0133e8a6bbf184130ce616afd6ed3c71921e34658060cb3acad419f763d8319c5a3fb48",
+          "sha256": "84ed2d37f9acd2fb20d8569eb4eaf3efdec16833ec0949ec54a37b9972097d0b",
+          "sha1": "2afd79f162572ddfecb3d63627bab20f41ba3d3e",
+          "md5": "b30d4ff64bd0b7b7fc7ac149264458e1"
+        }
+      ]
+    }
+  ]
+}

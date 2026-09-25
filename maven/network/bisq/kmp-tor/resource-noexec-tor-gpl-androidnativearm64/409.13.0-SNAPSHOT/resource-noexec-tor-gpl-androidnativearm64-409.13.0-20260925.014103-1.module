@@ -1,0 +1,103 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../resource-noexec-tor-gpl/409.13.0-SNAPSHOT/resource-noexec-tor-gpl-409.13.0-SNAPSHOT.module",
+    "group": "network.bisq.kmp-tor",
+    "module": "resource-noexec-tor-gpl",
+    "version": "409.13.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-api",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "io.matthewnelson.kmp-tor",
+          "module": "common-core",
+          "version": {
+            "requires": "2.4.2"
+          }
+        },
+        {
+          "group": "network.bisq.kmp-tor",
+          "module": "resource-geoip",
+          "version": {
+            "requires": "409.13.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "resource-noexec-tor-gpl-androidNativeArm64Main-409.13.0-SNAPSHOT.klib",
+          "url": "resource-noexec-tor-gpl-androidnativearm64-409.13.0-SNAPSHOT.klib",
+          "size": 39194,
+          "sha512": "eecc71af150b5bba983687f8782e5a82ca0a2e706b217cedb6b5a7fedbd01d71355200d96abd3b2933f26e2e9b19e325a330c4ac17f61f8ecda19cd720a38b67",
+          "sha256": "2cebb89bf54e3a5d887272f5fb18b42c51a41ba50a36178b229f2c304f465dc8",
+          "sha1": "48041d8766c44f9a6fdcf4f92145e913ea07e71a",
+          "md5": "9f2c9337b809bb622b623cb0c2c74d52"
+        },
+        {
+          "name": "resource-noexec-tor-gpl-androidNativeArm64Cinterop-kmp_torMain-409.13.0-SNAPSHOT.klib",
+          "url": "resource-noexec-tor-gpl-androidnativearm64-409.13.0-SNAPSHOT-cinterop-kmp_tor.klib",
+          "size": 10701,
+          "sha512": "1e067b1c0374a8bd287d246ee59c3a2898cd5636f5b52cd81693c230657cb9f41ad8f5b3d27f162dc10d39d37a954e55b7d2d571500f408f7c00431b35fe9959",
+          "sha256": "e69982a65408dbaf54332ae4ebc230152cf2dcc1bf675b41272c71cda80a5ba5",
+          "sha1": "9a2365f8b3e042b215d25897eadab1ff109c8b4e",
+          "md5": "dd785fa2db425e9831e31781d37b3e90"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "resource-noexec-tor-gpl-androidnativearm64-409.13.0-SNAPSHOT-sources.jar",
+          "url": "resource-noexec-tor-gpl-androidnativearm64-409.13.0-SNAPSHOT-sources.jar",
+          "size": 17943,
+          "sha512": "3d9a2268373d438c85a1c390b717ee373ba725c96f04b9ecde0fe7da13cdadc1b6bae321b8c2c23e9ca915b7be60dd0ece6def83a1548a3c3a9f2d3878ced672",
+          "sha256": "13dbc89eedba1e9bbf68293d732d428c835f62cd47691f4b033eec7885a8d319",
+          "sha1": "6c5742af4d5c4226c875f2734135a5049454f21c",
+          "md5": "37bcd6b4c4972a89a3c0566134788604"
+        }
+      ]
+    }
+  ]
+}
