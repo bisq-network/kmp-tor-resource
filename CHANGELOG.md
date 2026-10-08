@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 409.14.0 (unreleased)
+ - Updates `tor` to `tor-0.4.9.14` [[#7]][bisq-7]
+ - Drops the GitHub Pages mirror: releases are on Maven Central only, checksums on the GitHub release [[#7]][bisq-7]
+ - Fixes the tor version in the generated release notes [[#7]][bisq-7]
+
 ## Version 409.13.0 (2026-09-25)
  - Updates `tor` to `tor-0.4.9.13` [[#5]][bisq-5]
  - Publishes to Maven Central under group `io.github.rodvar.kmp-tor` [[#4]][bisq-4]
@@ -231,3 +236,4 @@
 [bisq-3]: https://github.com/bisq-network/kmp-tor-resource/pull/3
 [bisq-4]: https://github.com/bisq-network/kmp-tor-resource/pull/4
 [bisq-5]: https://github.com/bisq-network/kmp-tor-resource/pull/5
+[bisq-7]: https://github.com/bisq-network/kmp-tor-resource/pull/7

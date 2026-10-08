@@ -17,13 +17,13 @@ plugins {
     id("com.vanniktech.maven.publish")
 }
 
-// Bisq fork: publications go to a Maven layout under the root build directory, which the
-// publish workflow commits to the gh-pages branch. Task name per module:
-// publishAllPublicationsToGitHubPagesRepository
+// Bisq fork: publications also go to a Maven layout under the root build directory, which the
+// publish workflow checksums into the GitHub release. Task name per module:
+// publishAllPublicationsToLocalLayoutRepository
 publishing {
     repositories {
         maven {
-            name = "GitHubPages"
+            name = "LocalLayout"
             url = uri(rootProject.layout.buildDirectory.dir("maven-repo"))
         }
     }
