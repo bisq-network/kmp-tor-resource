@@ -2,13 +2,11 @@ name: Publish
 
 # Bisq fork. Publishes the Maven artifacts under group io.github.rodvar.kmp-tor.
 #
-# A release tag publishes to Maven Central (Central Portal, namespace io.github.rodvar) and to the
-# gh-pages branch, served by GitHub Pages as a Maven repository:
+# A release tag publishes to Maven Central (Central Portal, namespace io.github.rodvar).
 #
-#   https://bisq-network.github.io/kmp-tor-resource/maven/
-#
-# A manual dispatch publishes the current branch to GitHub Pages only, unless maven_central is
-# set, which rehearses the Central path too. Rehearse with an -rcN version: it uploads a normal
+# A manual dispatch builds and signs the current branch into a local Maven layout (checksums
+# only, nothing is uploaded), unless maven_central is set, which rehearses the Central path
+# too. Rehearse with an -rcN version: it uploads a normal
 # deployment that is validated but not released, drop it in the Central Portal afterwards. A
 # -SNAPSHOT version would need SNAPSHOT publishing enabled on the namespace, which the portal
 # currently refuses for io.github.rodvar.
@@ -27,7 +25,6 @@ name: Publish
 #   MAVEN_GPG_PASSPHRASE      its passphrase
 #   MAVEN_CENTRAL_USERNAME    Central Portal user token, username half
 #   MAVEN_CENTRAL_PASSWORD    Central Portal user token, password half
-# GitHub Pages must be enabled with the gh-pages branch as source.
 
 on:
   push:
@@ -204,7 +201,7 @@ jobs:
             echo "MAVEN_GPG_PRIVATE_KEY secret is not set"
             exit 1
           fi
-          ./gradlew publishAllPublicationsToGitHubPagesRepository --stacktrace \
+          ./gradlew publishAllPublicationsToLocalLayoutRepository --stacktrace \
             -PKMP_TARGETS="$KMP_TARGETS" \
             -PRELEASE_SIGNING_ENABLED="$SIGNING"
 
@@ -218,25 +215,6 @@ jobs:
           find . -type f ! -name '*.asc' ! -name '*.md5' ! -name '*.sha1' ! -name '*.sha256' ! -name '*.sha512' \
             | sort | xargs shasum -a 256 > "$GITHUB_WORKSPACE/SHA256SUMS"
           wc -l "$GITHUB_WORKSPACE/SHA256SUMS"
-
-      - name: Push To gh-pages
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git fetch origin gh-pages 2>/dev/null; then
-            git worktree add ../gh-pages origin/gh-pages
-          else
-            git worktree add --detach ../gh-pages
-            (cd ../gh-pages && git checkout --orphan gh-pages && git rm -rfq . && touch .nojekyll)
-          fi
-          mkdir -p ../gh-pages/maven
-          rsync -a build/maven-repo/ ../gh-pages/maven/
-          cp SHA256SUMS "../gh-pages/maven/SHA256SUMS-${{ env.version }}"
-          touch ../gh-pages/.nojekyll
-          cd ../gh-pages
-          git add -A
-          git commit -m "Publish ${{ env.version }} (${{ github.sha }})" || echo "nothing to publish"
-          git push origin HEAD:gh-pages
 
       # Uploads one deployment for the whole build (the maven publish plugin bundles every
       # module into a single zip), validates it and stops. Release it in the Central Portal.
@@ -261,13 +239,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          TOR="$(grep -o 'tor-[0-9.]*' README.md | head -1)"
+          # The version table row, not the first "tor-" in the file (the repo name matches that).
+          TOR="$(grep -oE 'tor-[0-9]+(\.[0-9]+){2,}' README.md | head -1)"
           {
             echo "kmp-tor-resource ${{ github.ref_name }}, ${TOR}, built from ${{ github.sha }}."
             echo
             echo "Group: io.github.rodvar.kmp-tor"
             echo "Maven Central: https://central.sonatype.com/namespace/io.github.rodvar.kmp-tor (release the validated deployment in the Central Portal if the version is not listed yet)"
-            echo "GitHub Pages mirror: https://bisq-network.github.io/kmp-tor-resource/maven/"
             echo
             echo "SHA256SUMS lists every published file. Rebuild the tag with external/task.sh and compare against build-logic to verify."
           } > RELEASE_NOTES.md
