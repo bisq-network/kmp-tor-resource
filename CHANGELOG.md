@@ -1,6 +1,13 @@
 # CHANGELOG
 
-## Version 409.14.0 (unreleased)
+## Version 409.16.0 (unreleased)
+ - Updates `tor` to `tor-0.4.9.16` [[#8]][bisq-8]
+ - Updates `openssl` to `openssl-3.5.9` [[#8]][bisq-8]
+ - Updates `libevent` to `release-2.1.13-stable` [[#8]][bisq-8]
+ - Updates `xz` to `v5.8.4` [[#8]][bisq-8]
+ - Drops the OpenSSL MinGW patch, which `openssl-3.5.9` already includes [[#8]][bisq-8]
+
+## Version 409.14.0 (2026-10-08)
  - Updates `tor` to `tor-0.4.9.14` [[#7]][bisq-7]
  - Drops the GitHub Pages mirror: releases are on Maven Central only, checksums on the GitHub release [[#7]][bisq-7]
  - Fixes the tor version in the generated release notes [[#7]][bisq-7]
@@ -237,3 +244,4 @@
 [bisq-4]: https://github.com/bisq-network/kmp-tor-resource/pull/4
 [bisq-5]: https://github.com/bisq-network/kmp-tor-resource/pull/5
 [bisq-7]: https://github.com/bisq-network/kmp-tor-resource/pull/7
+[bisq-8]: https://github.com/bisq-network/kmp-tor-resource/pull/8
