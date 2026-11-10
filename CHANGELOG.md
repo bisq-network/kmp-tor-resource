@@ -6,6 +6,7 @@
  - Updates `libevent` to `release-2.1.13-stable` [[#8]][bisq-8]
  - Updates `xz` to `v5.8.4` [[#8]][bisq-8]
  - Drops the OpenSSL MinGW patch, which `openssl-3.5.9` already includes [[#8]][bisq-8]
+ - Patches an `openssl-3.5.9` test that fails to link on powerpc64 when the assembly is disabled [[#8]][bisq-8]
 
 ## Version 409.14.0 (2026-10-08)
  - Updates `tor` to `tor-0.4.9.14` [[#7]][bisq-7]
