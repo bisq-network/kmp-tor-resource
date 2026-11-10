@@ -305,12 +305,15 @@ jobs:
             expected-host: linux-musl
             expected-arch: x86
             java-version: 8
+            # apk in the 32-bit alpine:3.4 container cannot reach its repositories on
+            # ubuntu-26.04 runners; amd64 is unaffected.
+            runner: ubuntu-24.04
           - arch: amd64
             distro: _
             expected-host: linux-musl
             expected-arch: x86_64
             java-version: 8
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runner || 'ubuntu-latest' }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
