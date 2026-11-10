@@ -1,0 +1,24 @@
+From: rodvar <1040902+rodvar@users.noreply.github.com>
+Subject: [PATCH] Fix chacha_internal_test link with no-asm on powerpc64
+
+OPENSSL_ppccap_P is only defined when the assembly is built
+(OPENSSL_CPUID_OBJ). With no-asm, setup_tests() references it anyway
+and the test fails to link on powerpc64 targets.
+
+---
+ test/chacha_internal_test.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+diff --git a/test/chacha_internal_test.c b/test/chacha_internal_test.c
+index 88c4a588b3..1e96044123 100644
+--- a/test/chacha_internal_test.c
++++ b/test/chacha_internal_test.c
+@@ -261,7 +261,8 @@ int setup_tests(void)
+ #endif
+ 
+     ADD_ALL_TESTS(test_cha_cha_internal, sizeof(ref));
+-#if defined(__powerpc64__) && !defined(OPENSSL_SYS_AIX) && !defined(OPENSSL_SYS_MACOSX)
++#if defined(__powerpc64__) && !defined(OPENSSL_SYS_AIX) && !defined(OPENSSL_SYS_MACOSX) \
++    && defined(OPENSSL_CPUID_OBJ)
+     /* Only run the ABI test when the POWER10 8x path is available */
+     if (OPENSSL_ppccap_P & PPC_BRD31)
+         ADD_TEST(test_chacha20_p10_fpr_abi);
